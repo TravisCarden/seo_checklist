@@ -1,4 +1,5 @@
 <?php
+// $Id: seochecklist.admin.inc,v 1.11 2010/05/25 13:13:44 eclipsegc Exp $
 
 /**
  * @file
