@@ -1,5 +1,5 @@
 <?php
-// $Id: seochecklist.admin.inc,v 1.11 2010/05/25 13:13:44 eclipsegc Exp $
+// $Id$
 
 /**
  * @file
@@ -17,8 +17,7 @@ function seochecklist_admin_settings() {
   $form['save_above'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
-  );
-
+  );  
   // Fetch modules and groups from database.
   $query = "SELECT id, name, description FROM {seo_group} ORDER BY id";
 
@@ -26,7 +25,7 @@ function seochecklist_admin_settings() {
   $group_id = 0;
 
   // Every group is a fieldset.
-  while ($data = db_fetch_object($result)) {
+  foreach ($result as $data) {
     $group_id = intval($data->id);
 
     $form['group_' . $group_id] = array(
@@ -35,15 +34,16 @@ function seochecklist_admin_settings() {
       '#collapsible' => TRUE,
       '#description' => t($data->description),
       '#group' => 'seochecklist',
+      
     );
 
-    $res = db_query("SELECT download, enable, configure, module, completed, id, name, uid FROM {seo_checklist} WHERE group_id = %d ORDER BY order_id", $group_id);
-    while ($row = db_fetch_object($res)) {
+    $res = db_query("SELECT download, enable, configure, module, completed, id, name, uid FROM {seo_checklist} WHERE group_id = :group_id ORDER BY order_id", array(':group_id' => $group_id));
+    foreach ($res as $row) {
       $row->links = array();
 
       if ($row->completed) {
         // Show when and who completed this task.
-        $row->links[] = t('Completed on %date by !username', array('%date' => format_date($row->completed, 'small'), '!username' => theme('username', user_load($row->uid))));
+        $row->links[] = t('Completed on %date by !username', array('%date' => format_date($row->completed, 'small'), '!username' => theme('username', array('account' => user_load($row->uid)))));
       }
       else {
         // Show non-completed sub-tasks.
@@ -60,9 +60,9 @@ function seochecklist_admin_settings() {
         $row->links[] = l(t('Configure'), $row->configure);
       }
 
-      if (variable_get('seo_checklist_book_references', 1) && $page = seochecklist_get_book_references($row->id)) {
+      /*if (variable_get('seo_checklist_book_references', 1) && $page = seochecklist_get_book_references($row->id)) {
         $row->links[] = t('See <a href="@book-purchase">Drupal 6 SEO</a> p. @page', array('@page' => $page, '@book-purchase' => SEOCHECKLIST_BOOK_PURCHASE));
-      }
+      }*/
 
       $task = $form['group_' . $group_id]['seochecklist_task_' . $row->id] = array(
         '#type' => 'checkbox',
@@ -118,14 +118,12 @@ function seochecklist_admin_settings() {
     '#weight' => 100,
   );
 
-  if (module_exists('vertical_tabs')) {
-    $form['#pre_render'][] = 'vertical_tabs_form_pre_render';
-    $form['save_above']['#attributes']['class'] = 'js-hide';
-  }
-  else {
-    drupal_set_message(t('Your SEO Checklist interface (in addition to your content and content type edit pages) will be greatly enhanced by installing the <a href="@vertical-tabs">Vertical Tabs module</a>.', array('@vertical-tabs' => 'http://drupal.org/project/vertical_tabs')), 'status', FALSE);
-  }
+  
+  $form['save_above']['#attributes']['class'][] = 'js-hide';
 
+  
+  
+  
   return $form;
 }
 
@@ -140,10 +138,10 @@ function seochecklist_admin_settings_submit($form, &$form_state) {
     if (preg_match('/seochecklist_task_/', $key)) {
       $key = explode('_', $key);
       $key = $key[2];
-      $current = (bool) db_result(db_query("SELECT completed FROM {seo_checklist} WHERE id = %d", $key));
+      $current = (bool) db_query("SELECT completed FROM {seo_checklist} WHERE id = :id", array(':id' => $key))->fetchField();
       if ($current != $value) {
         // If the checkbox changed states, update the record.
-        db_query("UPDATE {seo_checklist} SET completed = %d, uid = %d WHERE id = %d", ($value ? time() : 0), $user->uid, $key);
+        db_query("UPDATE {seo_checklist} SET completed = :completed, uid = :uid WHERE id = :id", array(':completed' => ($value ? time() : 0), ':uid' => $user->uid, ':id' => $key));
         $count++;
       }
     }
