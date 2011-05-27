@@ -10,19 +10,8 @@
  * Implementation of hook_help().
  */
 function seochecklist_help($path, $arg) {
-  if ($path == 'admin/config/seochecklist') {
+  if ($path == 'admin/config/search/seochecklist') {
     return '<p>' . t('Check off each SEO-related task as you complete it. Do not forget to click the <em>Save</em> button!') . '</p>';
-  }
-}
-  /**
- * Implementation of hook_init().
- */
-function seochecklist_init() {
-  if ($_GET['q'] == 'admin/config/seochecklist') {    
-    $vtabs = variable_get('vertical_tabs_forms', array());
-    // Enable vertical tabs on a form.
-    $vtabs['seochecklist_admin_settings'] = TRUE;
-    variable_set('vertical_tabs_forms', $vtabs);
   }
 }
 
@@ -32,7 +21,7 @@ function seochecklist_init() {
 function seochecklist_permission() {
   return array(
     'access seochecklist content' => array(
-      'title' => t('Access SEOchecklist Content'), 
+      'title' => t('Access SEOchecklist Content'),
       'description' => t('Access to SEO Checklist.'),
     ),
   );
@@ -42,7 +31,7 @@ function seochecklist_permission() {
  * Implementation of hook_menu().
  */
 function seochecklist_menu() {
-  $items['admin/config/seochecklist'] = array(
+  $items['admin/config/search/seochecklist'] = array(
     'title' => 'SEO Checklist',
     'description' => 'Keep track of your Drupal Search Engine Optimization tasks.',
     'page callback' => 'drupal_get_form',

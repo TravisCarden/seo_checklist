@@ -17,12 +17,17 @@ function seochecklist_admin_settings() {
   $form['save_above'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
-  );  
+  );
   // Fetch modules and groups from database.
   $query = "SELECT id, name, description FROM {seo_group} ORDER BY id";
 
   $result = db_query($query);
   $group_id = 0;
+
+  // Vertical tab element.
+  $form['seochecklist'] = array(
+    '#type' => 'vertical_tabs',
+  );
 
   // Every group is a fieldset.
   foreach ($result as $data) {
@@ -34,7 +39,7 @@ function seochecklist_admin_settings() {
       '#collapsible' => TRUE,
       '#description' => t($data->description),
       '#group' => 'seochecklist',
-      
+
     );
 
     $res = db_query("SELECT download, enable, configure, module, completed, id, name, uid FROM {seo_checklist} WHERE group_id = :group_id ORDER BY order_id", array(':group_id' => $group_id));
@@ -118,12 +123,12 @@ function seochecklist_admin_settings() {
     '#weight' => 100,
   );
 
-  
+
   $form['save_above']['#attributes']['class'][] = 'js-hide';
 
-  
-  
-  
+
+
+
   return $form;
 }
 
