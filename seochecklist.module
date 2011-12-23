@@ -11,7 +11,9 @@
  */
 function seochecklist_help($path, $arg) {
   if ($path == 'admin/config/search/seochecklist') {
-    return '<p>' . t('Check off each SEO-related task as you complete it. Do not forget to click the <em>Save</em> button!') . '</p>';
+    //image not found, commenting the banner
+    return //l('<img width=700 height=100 src="http://www.volacci.com/linkcodes/seo-checklist-banner.png">', 'http://www.volacci.com/lp/drupal-seo-checklist', array('html' => TRUE)) .
+      '<p>' . t('Check off each SEO-related task as you complete it. Do not forget to click the <em>Save</em> button!') . '</p>';
   }
 }
 
