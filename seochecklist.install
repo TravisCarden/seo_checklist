@@ -44,7 +44,9 @@ function seochecklist_schema() {
  * Implementation of hook_install().
  */
 function seochecklist_install() {
+  global $user;
   menu_rebuild();
+  db_query("INSERT INTO {seo_checklist} (id, completed, uid) VALUES (:id, :time, :uid)", array(':id' => 69, ':time' => time(), ':uid' => $user->uid));
 }
 
 /**

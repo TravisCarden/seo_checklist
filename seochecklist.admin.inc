@@ -218,14 +218,14 @@ function _seochecklist_fill() {
   // URL tasks
   _seochecklist_group_insert('URL paths', 'The second most important thing you can do.');
   _seochecklist_item_insert(2, 'Clean URLs - Activate (Usually automatic. Please double-check!)', '', array('configure' => 'admin/config/search/clean-urls'));
-  _seochecklist_item_insert(5, 'Pathauto Module. Warning: Use beta modules at your own risk.', 'pathauto', array('configure' => 'admin/config/search/path/patterns'));
+  _seochecklist_item_insert(5, 'Pathauto Module', 'pathauto', array('configure' => 'admin/config/search/path/patterns'));
   _seochecklist_item_insert(6, 'Global Redirect Module', 'globalredirect');
   _seochecklist_item_insert(38, 'Redirect Module', 'redirect', array('configure' => 'admin/config/search/redirect/settings'));
 
   // Search engine account tasks
   _seochecklist_group_insert('Create Search Engine Accounts', 'Set yourself up with the search engines.');
   _seochecklist_item_insert(7, array('Get a Google Account - You will need this for several of the steps that follow - <a href="@url">@url</a>', '@url' => 'https://www.google.com/accounts/NewAccount'));
-  _seochecklist_item_insert(8, array('Get a Yahoo Account - You will need this for steps that follow - <a href="@url">@url</a>', '@url' => 'http://www.yahoo.com/r/m7'));
+  //_seochecklist_item_insert(8, array('Get a Yahoo Account - You will need this for steps that follow - <a href="@url">@url</a>', '@url' => 'http://www.yahoo.com/r/m7'));
   _seochecklist_item_insert(44, array('Get a Windows Live ID - You will need this for steps that follow - <a href="@url">@url</a>', '@url' => 'https://signup.live.com/'));
 
   // Visitor tracking tasks
@@ -263,14 +263,14 @@ function _seochecklist_fill() {
   // XML sitemap tasks
   _seochecklist_group_insert('Submit your Site to the search engines.', 'Now that you\'ve got your site ready for the search engines, tell them about it!');
   _seochecklist_item_insert(47, 'Site Verification Module', 'site_verify', array('configure' => 'admin/config/search/verifications'));
-  _seochecklist_item_insert(21, 'XML Sitemap Module. Warning: Use beta modules at your own risk.', 'xmlsitemap', array('configure' => 'admin/config/search/xmlsitemap'));
+  _seochecklist_item_insert(21, 'XML Sitemap Module', 'xmlsitemap', array('configure' => 'admin/config/search/xmlsitemap'));
   _seochecklist_item_insert(46, 'Site Map Module - a plain text sitemap. Warning: Use beta modules at your own risk.', 'site_map', array('configure' => 'admin/config/search/sitemap'));
   _seochecklist_item_insert(22, array('Login to Google Webmaster Tools - <a href="@url">@url</a>', '@url' => 'http://www.google.com/webmasters/tools'));
   _seochecklist_item_insert(23, 'Authenticate your site with Google (page 26)');
   _seochecklist_item_insert(24, array('Submit your XML Sitemap to Google - <a href="@url">@url</a>', '@url' => 'http://www.google.com/webmasters/sitemaps/'));
-  _seochecklist_item_insert(25, array('Login to Yahoo Site Explorer Account - <a href="@url">@url</a>', '@url' => 'https://siteexplorer.search.yahoo.com/'));
-  _seochecklist_item_insert(26, 'Authenticate your site with Yahoo');
-  _seochecklist_item_insert(27, array('Submit your XML Sitemap to Yahoo - <a href="@url">@url</a>', '@url' => 'https://siteexplorer.search.yahoo.com/submit'));
+  //_seochecklist_item_insert(25, array('Login to Yahoo Site Explorer Account - <a href="@url">@url</a>', '@url' => 'https://siteexplorer.search.yahoo.com/'));
+  //_seochecklist_item_insert(26, 'Authenticate your site with Yahoo');
+  //_seochecklist_item_insert(27, array('Submit your XML Sitemap to Yahoo - <a href="@url">@url</a>', '@url' => 'https://siteexplorer.search.yahoo.com/submit'));
   _seochecklist_item_insert(42, array('Login to Bing - <a href="@url">@url</a>', '@url' => 'http://www.bing.com/webmaster/'));
   _seochecklist_item_insert(43, 'Authenticate your site with Bing');
   _seochecklist_item_insert(28, array('Submit your XML Sitemap to Bing - <a href="@url">@url</a>', '@url' => 'http://www.bing.com/webmaster/submitsitepage.aspx'));
@@ -280,7 +280,7 @@ function _seochecklist_fill() {
   _seochecklist_group_insert('Social Media', 'Using Social news sites, blogs, etc? Consider these:');
   //_seochecklist_item_insert(30, 8, 'Digg This Module', 'diggthis', 'http://drupal.org/project/diggthis', 'admin/modules', 'admin/settings/diggthis', 1);
   _seochecklist_item_insert(30, 'AddThis. Warning: Use beta modules at your own risk.', 'addthis', array('configure' => 'admin/settings/addthis'));
-  _seochecklist_item_insert(31, 'Service Links Module. Warning: Use DEV modules at your own risk.', 'service_links', array('configure' => 'admin/config/services/service-links'));
+  _seochecklist_item_insert(31, 'Service Links Module', 'service_links', array('configure' => 'admin/config/services/service-links'));
   //_seochecklist_item_insert(32, 8, 'Trackback Module', 'trackback', 'http://drupal.org/project/trackback', 'admin/modules', 'admin/settings/trackback', 3);
   //_seochecklist_item_insert(48, 8, 'Activity Stream Module', 'activitystream', 'http://drupal.org/project/activitystream', 'admin/modules', '', 4);
   _seochecklist_item_insert(49, 'Add to Any Module', 'addtoany', array('configure' => 'admin/config/system/addtoany'));
@@ -307,7 +307,8 @@ function _seochecklist_fill() {
   //_seochecklist_item_insert(52, 11, 'Vertical Tabs Module', 'vertical_tabs', 'http://drupal.org/project/vertical_tabs', 'admin/modules', '', 1);
   _seochecklist_item_insert(53, 'Administration Menu. Warning: RC.', 'admin_menu', array('configure' => 'admin/config/administration/admin_menu'));
   _seochecklist_item_insert(60, 'Elements', 'elements');
-  _seochecklist_item_insert(61, 'Security Review. Warning: Use DEV modules at your own risk.', 'security_review', array('configure' => 'admin/reports/security-review'));
+  _seochecklist_item_insert(61, 'Security Review', 'security_review', array('configure' => 'admin/reports/security-review'));
+  _seochecklist_item_insert(72, 'Module Filter', 'module_filter', array('configure' => 'admin/config/user-interface/modulefilter'));
                 
   // Performance tasks
   _seochecklist_group_insert('Performance', '');
@@ -319,14 +320,14 @@ function _seochecklist_fill() {
   _seochecklist_item_insert(73, array('Download free internet marketing whitepapers from Volacci - <a href="@url">@url</a>', '@url' => 'http://www.volacci.com/free-whitepapers'));
   _seochecklist_item_insert(66, 'Link to Volacci to thank them for this awesome module.', '', array('description' => 'A small link will appear at the very bottom of your website. You can disable it at any time by un-checking this box. We really appreciate it!'));
   _seochecklist_item_insert(67, 
-          array('Send us feedback on the Drupal 6 SEO Checklist module or just say <em>Thanks!</em> and we will link to you from our website. Send your feedback and link information to <a href="mailto:@email">@email</a>.', '@email' => 'seochecklist@volacci.com'), '',
+          array('Send us feedback on the Drupal 7 SEO Checklist module or just say <em>Thanks!</em> and we will link to you from our website. Send your feedback and link information to <a href="mailto:@email">@email</a>.', '@email' => 'seochecklist@volacci.com'), '',
           array('description' => array('If you do not know why you should link with other websites, read the following article: <a href="@link">Why links help SEO</a>.', '@link' => 'http://www.volacci.com/why-links-help-seo')));
   _seochecklist_item_insert(68, array('Listen to the <a href="@podcast">Volacci Drupal SEO Podcast</a> for more tips and tricks about Drupal SEO.', '@podcast' => 'http://www.volacci.com/podcast'));
   _seochecklist_item_insert(69, 
           array('Include page number references from the <a href="@book">Drupal 6 SEO Book</a> by Ben Finklea.', '@book' => 'http://www.drupalseobook.com/'), '',
           array('description' => array('<a href="@book-purchase">Purchase from Packt Publishing</a>', '@book-purchase' => SEOCHECKLIST_BOOK_PURCHASE)));
   _seochecklist_item_insert(70, array('Buy Drupal 6 Search Engine Optimization by Ben Finklea from <a href="@amazon">Amazon</a> or <a href="@packt">Packt</a>.', '@amazon' => 'http://www.amazon.com/gp/product/1847198228?ie=UTF8&tag=dvdcentral02&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847198228', '@packt' => 'https://www.packtpub.com/drupal-6-search-engine-optimization-seo/book?mid/170909568gh3'));
-  _seochecklist_item_insert(72, 'Module Filter', 'module_filter', array('configure' => 'admin/config/user-interface/modulefilter'));
-   
+  _seochecklist_item_insert(76, array('Watch a Video Tutorial on Drupal SEO from Lullabot - <a href="@link">@link</a>', '@link' => 'http://drupalize.me/videos/introduction-drupal-seo'));
+ 
 
 }
