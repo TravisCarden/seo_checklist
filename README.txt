@@ -4,6 +4,7 @@ CONTENTS OF THIS FILE
 
  * Description and Benefits
  * Installation and Usage
+ * Upgrading from 3.x
  * More Information
 
 
@@ -28,6 +29,25 @@ http://drupal.org/documentation/install/modules-themes/modules-7. To start using
 the module, go to admin/settings/seo-checklist. It will pre-check any completed
 items it is able to auto detect. Start working through the rest, and click
 "Save" to save your progress!
+
+
+UPGRADING FROM 3.x
+------------------
+
+IMPORTANT: As with any other irreversible change, you should backup your
+database before attempting to upgrade the SEO Checklist!
+
+With the 4.x branch the module machine name was changed to match the Drupal.org
+project name, so Drupal won't recognize it as the same module anymore. You'll
+need to re-enable it from the Modules page (admin/modules). When installed, it
+will remove the residue of the old module name itself.
+
+Additionally, the module now depends on the Checklist API
+(http://drupal.org/project/checklistapi), which you'll need to install before
+you can enable the new version.
+
+Your saved progress from the 3.x version of the module will be preserved when
+you update.
 
 
 MORE INFORMATION
