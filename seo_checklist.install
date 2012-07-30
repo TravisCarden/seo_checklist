@@ -12,7 +12,9 @@ function seo_checklist_install() {
   // Detect and update a pre- name change installation.
   $result = db_query("SELECT * FROM {system} WHERE name = 'seochecklist'");
   if ($result->rowCount()) {
-    seo_checklist_update_7400();
+    if (db_table_exists('seo_checklist')) {
+      seo_checklist_update_7400();
+    }
   }
 }
 
