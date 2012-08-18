@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Default theme implementation to display a node.
+ * Default theme implementation for the SEO Checklist "Intro" tab.
  *
  * Available variables:
  * - $volacci_logo: An HTML image tag for the Volacci logo.
