@@ -46,7 +46,13 @@ function seo_checklist_checklistapi_checklist_info() {
     // Introduction.
     'introduction' => array(
       '#title' => t('Introduction'),
-      '#description' => theme('seo_checklist_intro_tab'),
+      '#description' => theme('seo_checklist_intro_tab', array(
+        'volacci_logo' => theme('image', array(
+          'path' => drupal_get_path('module', 'seo_checklist') . '/volacci-logo.png',
+          'alt' => t('Volacci'),
+          'title' => t('Volacci'),
+        )),
+      )),
     ),
 
     // Tools.
@@ -622,17 +628,6 @@ function seo_checklist_page_alter(&$page) {
       '#markup' => '<div id="seo-checklist-volacci-link"><a href="http://www.volacci.com/">Drupal SEO</a></div>',
     );
   }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for seo_checklist_intro_tab.tpl.php.
- */
-function template_preprocess_seo_checklist_intro_tab(&$variables) {
-  $variables['volacci_logo'] = theme('image', array(
-    'path' => drupal_get_path('module', 'seo_checklist') . '/volacci-logo.png',
-    'alt' => t('Volacci'),
-    'title' => t('Volacci'),
-  ));
 }
 
 /**
