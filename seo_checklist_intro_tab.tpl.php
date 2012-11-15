@@ -16,7 +16,7 @@
 <p>Please read these instructions to get the most out of your Drupal Search Engine Optimization efforts.</p>
 
 <h4>Important warning</h4>
-<p>This checklist will not search engine optimize your site. It was written as a guide for Drupal SEO experts. If you need help with Drupal SEO best practices, the search engines' latest changes, your brand's target audience, or strategic marketing objectives, consider using a Drupal-specific Internet Marketing consultant like <a href="mailto:sales@volacci.com">Volacci</a> or ask your Drupal developer for a recommendation.</p>
+<p>This checklist will not search engine optimize your site. It was written as a guide for Drupal SEO experts. If you need help with Drupal SEO best practices, the search engines' latest changes, your brand's target audience, or strategic marketing objectives, consider using a Drupal-specific Internet Marketing consultant like <a href="http://www.volacci.com/contact?utm_source=seo_checklist&amp;utm_medium=backend&amp;utm_content=text&amp;utm_campaign=volacci_seo">Volacci</a> or ask your Drupal developer for a recommendation.</p>
 
 <h4>Getting started</h4>
 <p>Each time you open the SEO Checklist, it will look to see if any tasks have already been completed. For example, if you've already turned on clean URLs then that item will be checked.  You still need to click "Save" to time and date stamp the automatically-checked items.</p>
@@ -33,8 +33,8 @@
 <p><em>Some recommended modules may not be considered ready for production websites. These modules are usually marked with "beta" or "dev" or "alpha" on Drupal.org. Please be very careful when installing any module&mdash;even those that have been fully tested and released&mdash;but be especially careful with dev, alpha, or beta modules.</em></p>
 
 <h4>Credits</h4>
-<p>The Drupal SEO Checklist was created by <a href="http://drupal.org/user/46676">Ben Finklea</a>, the CEO of <a href="http://www.volacci.com/">Volacci</a> and a long-time Drupal community member. Development was paid for exclusively by Volacci. Special thanks to <a href="http://drupal.org/user/236758">Travis Carden</a> who created the <a href="http://drupal.org/project/checklistapi">Checklist API</a> and ported the Drupal SEO Checklist module to use it. </p>
+<p>The Drupal SEO Checklist was created by <a href="http://drupal.org/user/46676">Ben Finklea</a>, the CEO of <a href="http://www.volacci.com/?utm_source=seo_checklist&amp;utm_medium=backend&amp;utm_content=text&amp;utm_campaign=volacci_seo">Volacci</a> and a long-time Drupal community member. Development was paid for exclusively by Volacci. Special thanks to <a href="http://drupal.org/user/236758">Travis Carden</a> who created the <a href="http://drupal.org/project/checklistapi">Checklist API</a> and ported the Drupal SEO Checklist module to use it. </p>
 <p id="seo-checklist-intro-volacci">
-  <a href="http://www.volacci.com/"><?php print $volacci_logo; ?></a>
+  <a href="http://www.volacci.com/?utm_source=seo_checklist&amp;utm_medium=backend&amp;utm_content=logo&amp;utm_campaign=volacci_seo"><?php print $volacci_logo; ?></a>
   <strong>More Leads. Less Work.</strong>
 </p>

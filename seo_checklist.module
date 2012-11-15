@@ -60,7 +60,7 @@ function seo_checklist_checklistapi_checklist_info() {
       '#title' => t('Tools (optional)'),
       '#description' => t('<p>While not strictly necessary for SEO, these modules will accelerate your work.</p>'),
       'install_admin_menu' => array(
-        '#title' => t('[optional] Install Administration menu module.'),
+        '#title' => t('[Optional] Install Administration menu module.'),
         '#default_value' => module_exists('admin_menu'),
         'project_page' => array(
           '#text' => t('Download'),
@@ -69,15 +69,15 @@ function seo_checklist_checklistapi_checklist_info() {
         'modules_page' => $modules_page,
       ),
       'install_drush' => array(
-        '#title' => t('[optional] Install Drush.'),
-        '#description' => t('Drush is a command line shell and scripting interface for Drupal that you can use to <a href="http://vimeo.com/5207683">install modules faster</a>.'),
+        '#title' => t('[Optional] Install Drush.'),
+        '#description' => t('Drush is a command line tool for Drupal that you can use, among other things, to <a href="http://vimeo.com/5207683">install modules faster</a>.'),
         'project_page' => array(
           '#text' => t('Download and install'),
           '#path' => 'http://drupal.org/project/drush',
         ),
       ),
       'install_module_filter' => array(
-        '#title' => t('[optional] Install Module Filter module.'),
+        '#title' => t('[Optional] Install Module Filter module.'),
         '#default_value' => module_exists('module_filter'),
         'project_page' => array(
           '#text' => t('Download'),
@@ -109,7 +109,7 @@ function seo_checklist_checklistapi_checklist_info() {
         ),
       ),
       'install_metatags_quick' => array(
-        '#title' => t('[optional] Install Meta tags quick module.'),
+        '#title' => t('[Optional] Install Meta tags quick module.'),
         '#description' => t("If you want to add meta tags to non-node entities, you'll need this module for now."),
         '#default_value' => module_exists('metatags_quick'),
         'project_page' => array(
@@ -119,7 +119,7 @@ function seo_checklist_checklistapi_checklist_info() {
         'modules_page' => $modules_page,
       ),
       'configure_metatags_quick' => array(
-        '#title' => t('[optional] Configure Meta tags quick module.'),
+        '#title' => t('[Optional] Configure Meta tags quick module.'),
         'config_page' => array(
           '#text' => t('Configure'),
           '#path' => 'admin/config/search/metatags_quick',
@@ -274,6 +274,23 @@ function seo_checklist_checklistapi_checklist_info() {
     'content' => array(
       '#title' => t('Content'),
       '#description' => t('<p>Well-written content is important to the search engines. These modules help.</p>'),
+      'install_microdata' => array(
+        '#title' => t('Install Microdata module.'),
+        '#description' => t("Microdata enables you to share content with other sites and services, like Google's Recipe View, using inline metadata."),
+        '#default_value' => module_exists('microdata'),
+        'config_page' => array(
+          '#text' => t('Download module'),
+          '#path' => 'http://drupal.org/project/microdata',
+        ),
+        'modules_page' => $modules_page,
+      ),
+      'configure_microdata' => array(
+        '#title' => t('Configure Microdata module.'),
+        'project_page' => array(
+          '#text' => t('Configure'),
+          '#path' => 'admin/config/services/microdata',
+        ),
+      ),
       'install_htmlpurifier' => array(
         '#title' => t('Install HTML Purifier module.'),
         '#description' => t('Follow the README!'),
@@ -397,7 +414,7 @@ function seo_checklist_checklistapi_checklist_info() {
         ),
       ),
       'add_to_google_places' => array(
-        '#title' => t('[optional] Add your business to Google Places, if appropriate.'),
+        '#title' => t('[Optional] Add your business to Google Places, if appropriate.'),
         'google_places' => array(
           '#text' => t('Google Places'),
           '#path' => 'http://www.google.com/local/add/',
@@ -410,7 +427,7 @@ function seo_checklist_checklistapi_checklist_info() {
       '#title' => t('Other checklists'),
       '#description' => t('<p>These checklists are essential for additional important Internet Marketing related tasks for your website.</p>'),
       'install_security_review' => array(
-        '#title' => t('[optional] Install Security Review module.'),
+        '#title' => t('[Optional] Install Security Review module.'),
         '#description' => t('The more popular your website becomes, the more important good security will be.'),
         '#default_value' => module_exists('security_review'),
         'project_page' => array(
@@ -426,11 +443,20 @@ function seo_checklist_checklistapi_checklist_info() {
       '#title' => t('Paid services (optional)'),
       '#description' => t('<p>There are many paid tools available to help you with your SEO and website maintenance. Here are some suggestions typically used by top Internet Marketing firms. At Volacci, we have tested and use all of these tools.</p>'),
       'mollom_spam_prevention' => array(
-        '#title' => t('[optional] Mollom spam prevention'),
+        '#title' => t('[Optional] Mollom spam prevention'),
         '#description' => t('<p>If your site will get heavy use from visitors creating accounts, commenting and/or creating content then use Mollom.</p>'),
         'register_page' => array(
           '#text' => t('Mollom website'),
           '#path' => 'http://mollom.com/',
+        ),
+        'project_page' => array(
+          '#text' => t('Download'),
+          '#path' => 'http://drupal.org/project/mollom',
+        ),
+        'modules_page' => $modules_page,
+        'config_page' => array(
+          '#text' => t('Configure'),
+          '#path' => 'admin/config/content/mollom',
         ),
       ),
     ),
@@ -439,7 +465,7 @@ function seo_checklist_checklistapi_checklist_info() {
     'extras' => array(
       '#title' => t('Extras (optional)'),
       'install_scheduler' => array(
-        '#title' => t('[optional] Install Scheduler module.'),
+        '#title' => t('[Optional] Install Scheduler module.'),
         '#default_value' => module_exists('scheduler'),
         'project_page' => array(
           '#text' => t('Download'),
@@ -448,7 +474,7 @@ function seo_checklist_checklistapi_checklist_info() {
         'modules_page' => $modules_page,
       ),
       'install_read_more' => array(
-        '#title' => t('[optional] Install Read More Link module.'),
+        '#title' => t('[Optional] Install Read More Link module.'),
         '#default_value' => module_exists('read_more'),
         'project_page' => array(
           '#text' => t('Download'),
@@ -457,14 +483,14 @@ function seo_checklist_checklistapi_checklist_info() {
         'modules_page' => $modules_page,
       ),
       'download_internet_marketing_whitepapers' => array(
-        '#title' => t('[optional] Download <a href="http://www.volacci.com/resources/whitepapers">free internet marketing whitepapers</a> from Volacci.'),
+        '#title' => t('[Optional] Download <a href="http://www.volacci.com/resources/whitepapers">free internet marketing whitepapers</a> from Volacci.'),
       ),
       'link_to_volacci' => array(
-        '#title' => t('[optional] Link to <a href="http://www.volacci.com/">Volacci</a> to thank them for this awesome module.'),
+        '#title' => t('[Optional] Link to <a href="http://www.volacci.com/">Volacci</a> to thank them for this awesome module.'),
         '#description' => t('Checking this item will cause a small link to appear at the very bottom of your website. You can disable it at any time by un-checking this box. We really appreciate it!'),
       ),
       'send_feedback' => array(
-        '#title' => t("[optional] Send feedback on the Drupal 7 SEO Checklist or just say <em>Thanks!</em>, and we'll link to your web site from volacci.com."),
+        '#title' => t("[Optional] Send feedback on the Drupal 7 SEO Checklist or just say <em>Thanks!</em>, and we'll link to your web site from volacci.com."),
         '#description' => t("Remember to include your link information in your email. If you don't know why you should link with other websites, read <a href=\"http://www.volacci.com/why-links-help-seo\">Why links help SEO</a>."),
         'email_link' => array(
           '#text' => t('seochecklist@volacci.com'),
@@ -472,7 +498,7 @@ function seo_checklist_checklistapi_checklist_info() {
         ),
       ),
       'read_drupal_6_seo_book' => array(
-        '#title' => t('[optional] Read Drupal 6 Search Engine Optimization by Ben Finklea.'),
+        '#title' => t('[Optional] Read Drupal 6 Search Engine Optimization by Ben Finklea.'),
         'buy_from_amazon' => array(
           '#text' => t('Buy from Amazon'),
           '#path' => 'http://www.amazon.com/gp/product/1847198228?ie=UTF8&tag=dvdcentral02&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847198228',
@@ -483,7 +509,7 @@ function seo_checklist_checklistapi_checklist_info() {
         ),
       ),
       'watch_drupalize_me_video' => array(
-        '#title' => t('[optional] Watch the free <a href="http://drupalize.me/videos/introduction-drupal-seo">Introduction to Drupal SEO</a> video from Lullabot.'),
+        '#title' => t('[Optional] Watch the free <a href="http://drupalize.me/videos/introduction-drupal-seo">Introduction to Drupal SEO</a> video from Lullabot.'),
       ),
     ),
 
@@ -507,7 +533,7 @@ function seo_checklist_page_alter(&$page) {
   if (_seo_checklist_volacci_link_is_enabled()) {
     $page['page_bottom']['seo_checklist_volacci_link'] = array(
       '#type' => 'markup',
-      '#markup' => '<div id="seo-checklist-volacci-link"><a href="http://www.volacci.com/">Drupal SEO</a></div>',
+      '#markup' => '<div id="seo-checklist-volacci-link"><a href="http://www.volacci.com/contact?utm_source=seo_checklist&amp;utm_medium=footer&amp;utm_campaign=volacci_seo">Drupal SEO</a></div>',
     );
   }
 }
