@@ -459,6 +459,27 @@ function seo_checklist_checklistapi_checklist_info() {
           '#path' => 'admin/config/content/mollom',
         ),
       ),
+      'volacci_automatr' => array(
+        '#title' => t('[Optional] Volacci Automatr&trade; marketing automation'),
+        '#description' => t('<p>If you need marketing automation, lead scoring, advanced email marketing, and more, along with SalesForce or SugarCRM integration, then use <a href="@automatr_url">Volacci Automatr&trade;</a>. If, for some reason, Automatr&trade; does not work for you, consider <a href="@marketo_url">Marketo</a> or <a href="@eloqua_url">Eloqua</a>.</p>', array(
+          '@automatr_url' => $automatr_url = 'http://automatr.volacci.com/?utm_source=seo_checklist&utm_medium=backend&utm_content=text&utm_campaign=volacci_automatr',
+          '@marketo_url' => 'http://www.marketo.com/',
+          '@eloqua_url' => 'http://www.eloqua.com/',
+        )),
+        'automatr_website' => array(
+          '#text' => t('Automatr website'),
+          '#path' => $automatr_url,
+        ),
+        'project_page' => array(
+          '#text' => t('Download'),
+          '#path' => 'http://drupal.org/project/automatr',
+        ),
+        'modules_page' => $modules_page,
+        'config_page' => array(
+          '#text' => t('Configure'),
+          '#path' => 'admin/config/marketing/automatr',
+        ),
+      ),
     ),
 
     // Extras.
