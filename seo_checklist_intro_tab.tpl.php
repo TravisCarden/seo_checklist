@@ -24,10 +24,12 @@
 
 <h4>How it's organized</h4>
 <p>The sections are listed from most important to least important. The tasks in each section are also ordered from most to least important. A notable exception to this is the Tools section.</p>
-<p>Tools: The tools section contains  items that will help you get things done faster. They are not necessary for good SEO, but they are highly recommended.</p>
-<p>Save Button: Be sure to click the save button after you check off each item. This will create a time and date stamp so that you can easily see when each task was completed.</p>
-<p>Links: Many tasks have links next to them. Some links are to drupal.org, outside websites, or to admin sections of your own site. Links to outside resources will open in a new window.</p>
-<p>Help: Some items have "More info" links. These will take you to appropriate documentation pages where you can read more about a module or important concept.</p>
+<ul>
+  <li><strong>Tools:</strong> The tools section contains  items that will help you get things done faster. They are not necessary for good SEO, but they are highly recommended.</li>
+  <li><strong>Save Button:</strong> Be sure to click the save button after you check off each item. This will create a time and date stamp so that you can easily see when each task was completed.</li>
+  <li><strong>Links:</strong> Many tasks have links next to them. Some links are to drupal.org, outside websites, or to admin sections of your own site. Links to outside resources will open in a new window.</li>
+  <li><strong>Help:</strong> Some items have "More info" links. These will take you to appropriate documentation pages where you can read more about a module or important concept.</li>
+</ul>
 
 <h4>A note about pre-release modules</h4>
 <p><em>Some recommended modules may not be considered ready for production websites. These modules are usually marked with "beta" or "dev" or "alpha" on Drupal.org. Please be very careful when installing any module&mdash;even those that have been fully tested and released&mdash;but be especially careful with dev, alpha, or beta modules.</em></p>
@@ -36,5 +38,5 @@
 <p>The Drupal SEO Checklist was created by <a href="http://drupal.org/user/46676">Ben Finklea</a>, the CEO of <a href="http://www.volacci.com/?utm_source=seo_checklist&amp;utm_medium=backend&amp;utm_content=text&amp;utm_campaign=volacci_seo">Volacci</a> and a long-time Drupal community member. Development was paid for exclusively by Volacci. Special thanks to <a href="http://drupal.org/user/236758">Travis Carden</a> who created the <a href="http://drupal.org/project/checklistapi">Checklist API</a> and ported the Drupal SEO Checklist module to use it. </p>
 <p id="seo-checklist-intro-volacci">
   <a href="http://www.volacci.com/?utm_source=seo_checklist&amp;utm_medium=backend&amp;utm_content=logo&amp;utm_campaign=volacci_seo"><?php print $volacci_logo; ?></a>
-  <strong>More Leads. Less Work.</strong>
+  <strong>Marketing Intelligence.</strong>
 </p>
