@@ -26,9 +26,9 @@ INSTALLATION AND USAGE
 
 SEO Checklist is installed in the usual way. See
 http://drupal.org/documentation/install/modules-themes/modules-7. To start using
-the module, go to admin/settings/seo-checklist. It will pre-check any completed
-items it is able to auto detect. Start working through the rest, and click
-"Save" to save your progress!
+the module, go to admin/config/search/seo-checklist. It will pre-check any
+completed items it is able to auto detect. Start working through the rest, and
+click "Save" to save your progress!
 
 
 UPGRADING FROM 3.x
