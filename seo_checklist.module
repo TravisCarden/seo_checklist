@@ -59,15 +59,6 @@ function seo_checklist_checklistapi_checklist_info() {
     'tools' => array(
       '#title' => t('Tools (optional)'),
       '#description' => t('<p>While not strictly necessary for SEO, these modules will accelerate your work.</p>'),
-      'install_admin_menu' => array(
-        '#title' => t('[Optional] Install Administration menu module.'),
-        '#default_value' => module_exists('admin_menu'),
-        'project_page' => array(
-          '#text' => t('Download'),
-          '#path' => 'http://drupal.org/project/admin_menu',
-        ),
-        'modules_page' => $modules_page,
-      ),
       'install_drush' => array(
         '#title' => t('[Optional] Install Drush.'),
         '#description' => t('Drush is a command line tool for Drupal that you can use, among other things, to <a href="http://vimeo.com/5207683">install modules faster</a>.'),
@@ -106,6 +97,23 @@ function seo_checklist_checklistapi_checklist_info() {
         'config_page' => array(
           '#text' => t('Configure'),
           '#path' => 'admin/config/search/metatags',
+        ),
+      ),
+      'install_page_title' => array(
+        '#title' => t('[Optional] Install Page Title module.'),
+        '#description' => t('Until Meta tags adds the functionality, Page Title is necessary for paged Views.'),
+        '#default_value' => module_exists('page_title'),
+        'project_page' => array(
+          '#text' => t('Download'),
+          '#path' => 'http://drupal.org/project/page_title',
+        ),
+        'modules_page' => $modules_page,
+      ),
+      'configure_page_title' => array(
+        '#title' => t('[Optional] Configure Page Title module.'),
+        'config_page' => array(
+          '#text' => t('Configure'),
+          '#path' => 'admin/config/search/page-title',
         ),
       ),
       'install_metatags_quick' => array(
@@ -444,7 +452,7 @@ function seo_checklist_checklistapi_checklist_info() {
       '#description' => t('<p>There are many paid tools available to help you with your SEO and website maintenance. Here are some suggestions typically used by top Internet Marketing firms. At Volacci, we have tested and use all of these tools.</p>'),
       'mollom_spam_prevention' => array(
         '#title' => t('[Optional] Mollom spam prevention'),
-        '#description' => t('<p>If your site will get heavy use from visitors creating accounts, commenting and/or creating content then use Mollom.</p>'),
+        '#description' => t("<p>If your site will get heavy use from visitors creating accounts, commenting and/or creating content then use Mollom. It's free for up to 100 legitimate posts a day, which covers most small sites.</p>"),
         'register_page' => array(
           '#text' => t('Mollom website'),
           '#path' => 'http://mollom.com/',
