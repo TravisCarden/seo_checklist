@@ -1,11 +1,13 @@
 (function ($) {
-
   "use strict";
-  Drupal.behaviors.seo_checklist = {
-    attach: function (context) {
 
+  /**
+   * Causes external links to open in a new window.
+   */
+  Drupal.behaviors.seo_checklistOpenExternalLinksInNewWindow = {
+    attach: function (context) {
       // Open external links in a new window.
-      $('#checklistapi-checklist-form fieldset a', context).filter(function () {
+      $('#checklistapi-checklist-form details a', context).filter(function () {
         // Ignore non-HTTP (e.g. mailto:) link.
         return this.href.indexOf('http') === 0;
       }).filter(function () {
@@ -16,7 +18,20 @@
         // own windows.
         $(this).attr('target', (this.hostname === 'drupal.org') ? 'drupal_org' : '_blank');
       });
+    }
+  };
 
+  /**
+   * Adds dynamic toggling of CLI commands display.
+   */
+  Drupal.behaviors.seo_checklistToggleCliCommandsDisplay = {
+    attach: function (context) {
+      var checkbox = $('#edit-checklistapi-be-efficient-show-cli-commands', context);
+      var commands = $('.cli-commands', context);
+      checkbox.is(':checked') || commands.hide();
+      checkbox.click(function () {
+        commands.toggle(this.checked);
+      });
     }
   };
 
