@@ -47,7 +47,6 @@ function seo_checklist_checklistapi_checklist_info() {
           'page' => 19,
         ],
         '#module' => 'seo_checklist',
-        '#configure' => 'checklistapi.checklists.seo_checklist',
       ],
       'install_and_enable_coffee_module' => [
         '#title' => t('[Optional] Install and Enable Coffee module'),
