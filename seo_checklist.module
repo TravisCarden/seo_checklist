@@ -623,33 +623,6 @@ function seo_checklist_checklistapi_checklist_items() {
           'page' => 217,
         ],
       ],
-      'install_and_enable_mollom_module' => [
-        '#title' => t('Install and Enable Mollom module'),
-        '#description' => t('If your site will get heavy use from visitors creating accounts, commenting and/or creating content then use Mollom.'),
-        '#book_ref' => [
-          'chapter' => 9,
-          'page' => 221,
-        ],
-        '#module' => 'mollom',
-        '#seo_training_camp' => Url::fromUri('https://www.mollom.com/'),
-      ],
-      'sign_up_for_mollom_service' => [
-        '#title' => t('Sign up for Mollom service'),
-        '#description' => t('Create an account and profile for your site.'),
-        '#book_ref' => [
-          'chapter' => 9,
-          'page' => 223,
-        ],
-      ],
-      'configure_mollom_module' => [
-        '#title' => t('Configure Mollom module'),
-        '#description' => t('Connect your site with the Mollom service.'),
-        '#book_ref' => [
-          'chapter' => 9,
-          'page' => 223,
-        ],
-        '#configure' => 'mollom.settings',
-      ],
       'secure_your_website_with_https' => [
         '#title' => t('Secure Your Website with HTTPS'),
         '#description' => t('Google rewards secure websites with higher rankings.'),
