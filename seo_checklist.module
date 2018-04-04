@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
+// @codingStandardsIgnoreLine
 define('SEO_CHECKLIST_GA_QUERY_STRING', 'utm_source=seo_checklist&utm_medium=backend&utm_content=logo&utm_campaign=volacci_seo');
 
 /**
@@ -141,7 +142,7 @@ function seo_checklist_checklistapi_checklist_items() {
       ],
       'install_and_enable_redirect_module' => [
         '#title' => t('Install and Enable Redirect module'),
-        '#description' => t('Redirects visitors from old URLs to new URLs. '),
+        '#description' => t('Redirects visitors from old URLs to new URLs.'),
         '#book_ref' => [
           'chapter' => 3,
           'page' => 41,
@@ -745,8 +746,8 @@ function seo_checklist_checklistapi_checklist_items() {
       '#description' => t('Learn more about Drupal 8 SEO, give back by saying thanks, or report a bug or suggest a new feature.'),
       'read_drupal_8_seo_by_ben_finklea' => [
         '#title' => '<strong>' . t('[Optional] Read <a href=":url">Drupal 8 SEO</a> by Ben Finklea', [
-            ':url' => 'https://www.drupal8seo.com/',
-          ]) . '</strong>',
+          ':url' => 'https://www.drupal8seo.com/',
+        ]) . '</strong>',
         '#description' => t('This module was built together with the book Drupal 8 SEO. The book contains even more helpful tips along with step-by-step how-tos to get your site optimized for Google.'),
       ],
       'download_free_internet_marketing_resources_from_volacci' => [
@@ -809,7 +810,7 @@ function seo_checklist_checklistapi_checklist_items() {
  *
  * @internal
  */
-function _seo_checklist_preprocess_checklist_items($items) {
+function _seo_checklist_preprocess_checklist_items(array $items) {
   $module_handler = \Drupal::moduleHandler();
   $access_manager = \Drupal::accessManager();
   $current_user = \Drupal::currentUser();
@@ -822,18 +823,17 @@ function _seo_checklist_preprocess_checklist_items($items) {
           // Add book reference.
           if (isset($item['#book_ref'])) {
             $page = isset($item['#book_ref']['page']) ? $item['#book_ref']['page'] : FALSE;
-            if ($page) {
-              $string = 'See <a href=":url">Drupal 8 SEO</a> Chapter @chapter, p. @page.';
-            }
-            else {
-              $string = 'See <a href=":url">Drupal 8 SEO</a> Chapter @chapter.';
-            }
             $args = [
               ':url' => 'https://www.drupal8seo.com/',
               '@chapter' => $item['#book_ref']['chapter'],
               '@page' => $page,
             ];
-            $bookref = '<em class="book-link">' . t($string, $args) . '</em>';
+            if ($page) {
+              $bookref = '<em class="book-link">' . t('See <a href=":url">Drupal 8 SEO</a> Chapter @chapter, p. @page.', $args) . '</em>';
+            }
+            else {
+              $bookref = '<em class="book-link">' . t('See <a href=":url">Drupal 8 SEO</a> Chapter @chapter.', $args) . '</em>';
+            }
             $description = isset($item['#description']) ? "{$item['#description']} " : '';
             $item['#description'] = $description . $bookref;
             unset($item['#book_ref']);
