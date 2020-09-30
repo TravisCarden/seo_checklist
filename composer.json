@@ -8,5 +8,8 @@
   "support": {
     "issues": "https://www.drupal.org/project/issues/seo_checklist",
     "source": "http://drupalcode.org/seo_checklist"
+  },
+  "require": {
+    "drupal/checklistapi": "^2.0"
   }
 }
