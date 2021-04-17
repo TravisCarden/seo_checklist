@@ -10,14 +10,14 @@ use Drupal\Core\Url;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 // @codingStandardsIgnoreLine
-define('SEO_CHECKLIST_GA_QUERY_STRING', 'utm_source=seo_checklist&utm_medium=backend&utm_content=logo&utm_campaign=volacci_seo');
+const SEO_CHECKLIST_GA_QUERY_STRING = 'utm_source=seo_checklist&utm_medium=backend&utm_content=logo&utm_campaign=volacci_seo';
 
 /**
  * Implements hook_checklistapi_checklist_info().
  *
  * @see _seo_checklist_preprocess_checklist_items()
  */
-function seo_checklist_checklistapi_checklist_info() {
+function seo_checklist_checklistapi_checklist_info(): array {
   $definitions = [];
   $definitions['seo_checklist'] = [
     '#title' => t('SEO checklist'),
@@ -32,7 +32,7 @@ function seo_checklist_checklistapi_checklist_info() {
 /**
  * Implements callback_checklistapi_checklist_items() for seo_checklist.
  */
-function seo_checklist_checklistapi_checklist_items() {
+function seo_checklist_checklistapi_checklist_items(): array {
   /** @var \Drupal\Core\Render\RendererInterface $renderer */
   $renderer = \Drupal::service('renderer');
 
@@ -53,8 +53,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable SEO Checklist module'),
         '#description' => t('The Drupal SEO Checklist uses Drupal SEO best practices to check your website for proper search engine optimization.'),
         '#book_ref' => [
-          'chapter' => 2,
-          'page' => 19,
+          '#chapter' => 2,
+          '#page' => 19,
         ],
         '#module' => 'seo_checklist',
       ],
@@ -62,8 +62,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('[Optional] Install and Enable Coffee module'),
         '#description' => t('The Coffee module helps you to navigate through the Drupal admin faster, inspired by Mac apps Alfred and Spotlight.'),
         '#book_ref' => [
-          'chapter' => 2,
-          'page' => 27,
+          '#chapter' => 2,
+          '#page' => 27,
         ],
         '#module' => 'coffee',
         '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-coffee/12/04/2016/10291'),
@@ -73,8 +73,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('[Optional] Configure Coffee module'),
         '#description' => t('Set up which menus Coffee will display.'),
         '#book_ref' => [
-          'chapter' => 2,
-          'page' => 31,
+          '#chapter' => 2,
+          '#page' => 31,
         ],
         '#configure' => 'coffee.configuration',
       ],
@@ -82,8 +82,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('[Optional] Install and Enable Admin Toolbar module'),
         '#description' => t('Provides quicker access to administration pages by adding drop-down and pull-out menus to the Drupal admin toolbar.'),
         '#book_ref' => [
-          'chapter' => 2,
-          'page' => 35,
+          '#chapter' => 2,
+          '#page' => 35,
         ],
         '#module' => 'admin_toolbar',
         '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-admin-toolbar/04/02/2016/9661'),
@@ -92,7 +92,7 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('[Optional] Install Composer command line tool'),
         '#description' => t('Composer is the package manager for PHP. It installs modules and keeps a configuration file for faster deployment.'),
         '#book_ref' => [
-          'chapter' => 1,
+          '#chapter' => 1,
         ],
         'project_page' => [
           '#text' => t('Download'),
@@ -103,7 +103,7 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('[Optional] Install Drupal Console command line tool'),
         '#description' => t('Drupal Console is a newer command line tool that also helps you to install modules faster.'),
         '#book_ref' => [
-          'chapter' => 1,
+          '#chapter' => 1,
         ],
         '#seo_training_camp' => Url::fromUri('https://drupalconsole.com/docs'),
         'project_page' => [
@@ -115,7 +115,7 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('[Optional] Install Drush command line tool'),
         '#description' => t('Drush is a command line tool for Drupal that you can use, among other things, to install modules faster.'),
         '#book_ref' => [
-          'chapter' => 1,
+          '#chapter' => 1,
         ],
         '#seo_training_camp' => Url::fromUri('http://docs.drush.org/en/master/'),
         'project_page' => [
@@ -136,16 +136,16 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Enable clean URLs.'),
         '#description' => t('Clean URLs remove query strings from Drupal paths which improves SEO.'),
         '#book_ref' => [
-          'chapter' => 3,
-          'page' => 37,
+          '#chapter' => 3,
+          '#page' => 37,
         ],
       ],
       'install_and_enable_redirect_module' => [
         '#title' => t('Install and Enable Redirect module'),
         '#description' => t('Redirects visitors from old URLs to new URLs.'),
         '#book_ref' => [
-          'chapter' => 3,
-          'page' => 41,
+          '#chapter' => 3,
+          '#page' => 41,
         ],
         '#module' => 'redirect',
       ],
@@ -153,8 +153,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure the Redirect module'),
         '#description' => t('Tweak redirect settings for maximum benefit.'),
         '#book_ref' => [
-          'chapter' => 3,
-          'page' => 43,
+          '#chapter' => 3,
+          '#page' => 43,
         ],
         '#configure' => 'redirect.settings',
       ],
@@ -162,8 +162,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Pathauto module'),
         '#description' => t('Automatically generates URL/path aliases for various kinds of content without requiring the user to manually specify the path alias.'),
         '#book_ref' => [
-          'chapter' => 3,
-          'page' => 48,
+          '#chapter' => 3,
+          '#page' => 48,
         ],
         '#module' => 'pathauto',
       ],
@@ -171,8 +171,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Pathauto module'),
         '#description' => t('Defaults are usually OK for most sites.'),
         '#book_ref' => [
-          'chapter' => 3,
-          'page' => 50,
+          '#chapter' => 3,
+          '#page' => 50,
         ],
         '#configure' => 'pathauto.settings.form',
       ],
@@ -180,7 +180,7 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Create Pathauto patterns'),
         '#description' => t('Specify a pattern that Drupal will use to create the path name for a new piece of content.'),
         '#book_ref' => [
-          'chapter' => 3,
+          '#chapter' => 3,
         ],
         '#configure' => 'entity.pathauto_pattern.collection',
       ],
@@ -194,8 +194,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Metatag module'),
         '#description' => t('Provides structured metadata, aka "meta tags", about a website.'),
         '#book_ref' => [
-          'chapter' => 4,
-          'page' => 64,
+          '#chapter' => 4,
+          '#page' => 64,
         ],
         '#module' => 'metatag',
         '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-metatag/17/02/2016/9716'),
@@ -204,8 +204,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Set Metatags for your site'),
         '#description' => t('Set up the metatags for your content.'),
         '#book_ref' => [
-          'chapter' => 4,
-          'page' => 67,
+          '#chapter' => 4,
+          '#page' => 67,
         ],
         '#configure' => 'entity.metatag_defaults.collection',
       ],
@@ -213,8 +213,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Alternate hreflang module'),
         '#description' => t('Automatically adds hreflang tags to your pages.'),
         '#book_ref' => [
-          'chapter' => 4,
-          'page' => 88,
+          '#chapter' => 4,
+          '#page' => 88,
         ],
         '#module' => 'hreflang',
         '#seo_training_camp' => Url::fromUri('https://support.google.com/webmasters/answer/189077'),
@@ -230,16 +230,16 @@ function seo_checklist_checklistapi_checklist_items() {
         '#description' => t('Creates an XML Sitemap of your content that you can submit to the search engines.'),
         '#module' => 'xmlsitemap',
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 96,
+          '#chapter' => 5,
+          '#page' => 96,
         ],
       ],
       'configure_xml_sitemap_module' => [
         '#title' => t('Configure XML Sitemap module'),
         '#description' => t('Set up the entities that will appear in the XML Sitemap.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 98,
+          '#chapter' => 5,
+          '#page' => 98,
         ],
         '#configure' => 'xmlsitemap.admin_settings',
       ],
@@ -247,16 +247,16 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Set up Cron'),
         '#description' => t('Set up cron to run periodically so that your XML sitemap will be updated.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 104,
+          '#chapter' => 5,
+          '#page' => 104,
         ],
       ],
       'get_a_google_account' => [
         '#title' => t('Get a Google account.'),
         '#description' => t('A Google account gives you access to Google Search Console.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 106,
+          '#chapter' => 5,
+          '#page' => 106,
         ],
         'create_a_google_account' => [
           '#text' => t('Create Google account'),
@@ -267,8 +267,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Verify with Google Search Console.'),
         '#description' => t('Verify your ownership of your website with Google.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 107,
+          '#chapter' => 5,
+          '#page' => 107,
         ],
         'google_search_console' => [
           '#text' => t('Google Search Console'),
@@ -279,8 +279,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Submit XML sitemap to Google.'),
         '#description' => t('Gives Google a list of all the content on your website.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 111,
+          '#chapter' => 5,
+          '#page' => 111,
         ],
         'submit_xml_sitemap' => [
           '#text' => t('Submit XML sitemap'),
@@ -291,8 +291,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Get a Microsoft account.'),
         '#description' => t('A Microsoft account gives you access to Bing Webmaster Tools.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 113,
+          '#chapter' => 5,
+          '#page' => 113,
         ],
         'create_microsoft_account' => [
           '#text' => t('Create Microsoft account'),
@@ -303,8 +303,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Authenticate with Bing.'),
         '#description' => t('Authenticate your ownership of your website with Bing.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 114,
+          '#chapter' => 5,
+          '#page' => 114,
         ],
         'bing_webmaster_tools' => [
           '#text' => t('Bing Webmaster Tools'),
@@ -315,8 +315,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Submit XML sitemap to Bing.'),
         '#description' => t('Gives Bing a list of all the content on your website.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 114,
+          '#chapter' => 5,
+          '#page' => 114,
         ],
         'bing_webmaster_tools' => [
           '#text' => t('Bing Webmaster Tools'),
@@ -327,8 +327,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Add XML Sitemap to your robots.txt file.'),
         '#description' => t('Makes your XML sitemap findable by other search engines.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 119,
+          '#chapter' => 5,
+          '#page' => 119,
         ],
       ],
     ],
@@ -341,8 +341,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Google Analytics module'),
         '#description' => t('Adds the Google Analytics code snippet to your website and allows you to control how and when it is used.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 123,
+          '#chapter' => 5,
+          '#page' => 123,
         ],
         '#module' => 'google_analytics',
       ],
@@ -350,8 +350,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Google Analytics module'),
         '#description' => t("Set the tracking property in your site and make sure you're tracking the right roles."),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 125,
+          '#chapter' => 5,
+          '#page' => 125,
         ],
         '#configure' => 'google_analytics.admin_settings_form',
       ],
@@ -359,23 +359,23 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Sign in to Google Analytics and create an Analytics property for your website.'),
         '#description' => t('Create a tracking property for your website.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 126,
+          '#chapter' => 5,
+          '#page' => 126,
         ],
       ],
       'verify_your_site_is_sending_data_to_google_analytics' => [
         '#title' => t('Verify your site is sending data to Google Analytics.'),
         '#description' => t('Look for data in Google Analytics from your website.'),
         '#book_ref' => [
-          'chapter' => 5,
+          '#chapter' => 5,
         ],
       ],
       'cache_the_google_analytics_code' => [
         '#title' => t('Cache the Google Analytics code'),
         '#description' => t('If data is showing in Google Analytics, set caching to increase performance.'),
         '#book_ref' => [
-          'chapter' => 5,
-          'page' => 130,
+          '#chapter' => 5,
+          '#page' => 130,
         ],
         '#configure' => 'google_analytics.admin_settings_form',
       ],
@@ -383,7 +383,7 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('ALT: Install and Enable Piwik Web Analytics'),
         '#description' => t('As an alternative to Google Analytics, consider the Piwik module.'),
         '#book_ref' => [
-          'chapter' => 5,
+          '#chapter' => 5,
         ],
         '#module' => 'piwik',
         '#seo_training_camp' => Url::fromUri('https://piwik.org/'),
@@ -402,8 +402,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Easy Breadcrumbs module'),
         '#description' => t('Easy Breadcrumb uses the current URL (path alias) and the current page title to automatically create breadcrumbs.'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 136,
+          '#chapter' => 6,
+          '#page' => 136,
         ],
         '#module' => 'easy_breadcrumb',
       ],
@@ -411,8 +411,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Easy Breadcrumbs module'),
         '#description' => t('Set front page breadcrumb and other options.'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 137,
+          '#chapter' => 6,
+          '#page' => 137,
         ],
         '#configure' => 'easy_breadcrumb.general_settings_form',
       ],
@@ -420,8 +420,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable RDF UI module (use the dev version until beta2 is released)'),
         '#description' => t('Allows site builders to integrate schema.org seamlessly during or after the site building process on Drupal 8.'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 143,
+          '#chapter' => 6,
+          '#page' => 143,
         ],
         '#module' => 'rdfui',
       ],
@@ -429,8 +429,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Set Schema.org schemas for your content'),
         '#description' => t('Select the schemas that best match your content.'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 144,
+          '#chapter' => 6,
+          '#page' => 144,
         ],
         '#configure' => 'entity.node_type.collection',
       ],
@@ -438,8 +438,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Linkit module'),
         '#description' => t('Provides an easy interface for internal and external linking with wysiwyg editors by using an autocomplete field.'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 149,
+          '#chapter' => 6,
+          '#page' => 149,
         ],
         '#module' => 'linkit',
         '#configure' => 'entity.linkit_profile',
@@ -448,24 +448,24 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Linkit module'),
         '#description' => t('Set up CKEditor to use the Linkit module'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 150,
+          '#chapter' => 6,
+          '#page' => 150,
         ],
       ],
       'configure_text_formats_to_use_linkit_module' => [
         '#title' => t('Configure Text formats to use Linkit module'),
         '#configure' => 'filter.admin_overview',
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 153,
+          '#chapter' => 6,
+          '#page' => 153,
         ],
       ],
       'install_and_enable_d8_editor_advanced_link_module' => [
         '#title' => t('Install and Enable D8 Editor Advanced link module'),
         '#description' => t('Allows you to define title, class, id, target, and rel for links in CKEditor.'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 161,
+          '#chapter' => 6,
+          '#page' => 161,
         ],
         '#module' => 'editor_advanced_link',
       ],
@@ -473,8 +473,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Text formats to use D8 Editor Advanced link module'),
         '#description' => t('Set up CKEditor to use the D8 Editor Advanced link module'),
         '#book_ref' => [
-          'chapter' => 6,
-          'page' => 162,
+          '#chapter' => 6,
+          '#page' => 162,
         ],
         '#configure' => 'filter.admin_overview',
       ],
@@ -482,8 +482,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable W3C Validator module'),
         '#description' => t('W3C Validator provides a Drupal interface to use the W3C Markup Validator.'),
         '#book_ref' => [
-          'chapter' => 7,
-          'page' => 171,
+          '#chapter' => 7,
+          '#page' => 171,
         ],
         '#module' => 'w3c_validator',
       ],
@@ -491,8 +491,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure W3C Validator module'),
         '#description' => t('Set up W3C Validator and check your pages.'),
         '#book_ref' => [
-          'chapter' => 7,
-          'page' => 172,
+          '#chapter' => 7,
+          '#page' => 172,
         ],
         '#configure' => 'w3c_validator.overview',
       ],
@@ -500,16 +500,16 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Sitemap module'),
         '#description' => t('This module provides a site map that gives visitors an overview of your site. It can also display the RSS feeds for all blogs and categories.'),
         '#book_ref' => [
-          'chapter' => 7,
-          'page' => 175,
+          '#chapter' => 7,
+          '#page' => 175,
         ],
       ],
       'configure_sitemap_module' => [
         '#title' => t('Configure Sitemap module'),
         '#description' => t('Name and enable content of your sitemap.'),
         '#book_ref' => [
-          'chapter' => 7,
-          'page' => 177,
+          '#chapter' => 7,
+          '#page' => 177,
         ],
         '#module' => 'sitemap',
         '#configure' => 'sitemap.settings',
@@ -518,8 +518,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Search 404 module'),
         '#description' => t('Performs a search on the keywords in the URL instead of showing a standard "404 Page not found".'),
         '#book_ref' => [
-          'chapter' => 7,
-          'page' => 181,
+          '#chapter' => 7,
+          '#page' => 181,
         ],
         '#module' => 'search404',
       ],
@@ -527,8 +527,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Search 404 module'),
         '#description' => t('Set up how Search 404 responds to visitors.'),
         '#book_ref' => [
-          'chapter' => 7,
-          'page' => 182,
+          '#chapter' => 7,
+          '#page' => 182,
         ],
         '#configure' => 'search404.settings',
       ],
@@ -542,8 +542,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Yoast SEO module'),
         '#description' => t('Helps you optimize content around keywords in a natural, non-spam way.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 189,
+          '#chapter' => 8,
+          '#page' => 189,
         ],
         '#module' => 'yoast_seo',
         '#configure' => 'yoast_seo.settings',
@@ -552,16 +552,16 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Yoast SEO Module'),
         '#description' => t('Set up which content types the Yoast module will evaluate.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 190,
+          '#chapter' => 8,
+          '#page' => 190,
         ],
       ],
       'turn_on_create_new_revisions_for_all_content' => [
         '#title' => t('Turn on Create New Revisions for all content types'),
         '#description' => t('Helps you figure out what changes increased or decreased rankings.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 196,
+          '#chapter' => 8,
+          '#page' => 196,
         ],
         '#configure' => 'filter.admin_overview',
       ],
@@ -569,8 +569,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Diff module'),
         '#description' => t('Shows you differences between revisions to nodes.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 198,
+          '#chapter' => 8,
+          '#page' => 198,
         ],
         '#module' => 'diff',
       ],
@@ -578,8 +578,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure the Diff module'),
         '#description' => t('Configure how the diff module displays differences in your content.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 198,
+          '#chapter' => 8,
+          '#page' => 198,
         ],
         '#configure' => 'diff.general_settings',
       ],
@@ -587,8 +587,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Scheduler module'),
         '#description' => t('Scheduler gives content editors the ability to schedule nodes to be published and unpublished at specified dates and times in the future.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 204,
+          '#chapter' => 8,
+          '#page' => 204,
         ],
         '#module' => 'scheduler',
       ],
@@ -596,8 +596,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure the Scheduler module.'),
         '#description' => t('Set up how the Scheduler module displays dates and publishes content.'),
         '#book_ref' => [
-          'chapter' => 8,
-          'page' => 207,
+          '#chapter' => 8,
+          '#page' => 207,
         ],
         '#configure' => 'scheduler.admin_form',
       ],
@@ -611,8 +611,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Security Review module'),
         '#description' => t('The Security Review module automates testing for many of the easy-to-make mistakes that render your site insecure.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 215,
+          '#chapter' => 9,
+          '#page' => 215,
         ],
         '#module' => 'security_review',
       ],
@@ -620,24 +620,24 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Security Review module'),
         '#description' => t('Select the checks that the Security Review module makes on your site.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 217,
+          '#chapter' => 9,
+          '#page' => 217,
         ],
       ],
       'secure_your_website_with_https' => [
         '#title' => t('Secure Your Website with HTTPS'),
         '#description' => t('Google rewards secure websites with higher rankings.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 227,
+          '#chapter' => 9,
+          '#page' => 227,
         ],
       ],
       'adjust_performance_admin_settings' => [
         '#title' => t('Adjust Performance Admin Settings'),
         '#description' => t('Increase performance of your website with proper caching.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 230,
+          '#chapter' => 9,
+          '#page' => 230,
         ],
         '#configure' => 'system.performance_settings',
       ],
@@ -645,8 +645,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Advanced CSS/JS Aggregation module'),
         '#description' => t('Makes your site run faster by aggregating and compressing CSS and Javascript files.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 233,
+          '#chapter' => 9,
+          '#page' => 233,
         ],
         '#module' => 'advagg',
       ],
@@ -654,8 +654,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Advanced CSS/JS Aggregation module'),
         '#description' => t('Set up how the Advanced CSS/JS Aggregation module works.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 235,
+          '#chapter' => 9,
+          '#page' => 235,
         ],
         '#configure' => 'advagg.settings',
       ],
@@ -663,8 +663,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Image Styles'),
         '#description' => t('Use smaller, perfectly-sized images to decrease bandwidth usage and increase site speed.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 239,
+          '#chapter' => 9,
+          '#page' => 239,
         ],
         '#configure' => 'entity.image_style.collection',
       ],
@@ -672,8 +672,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Set up a CDN (Cloudflare, etc.)'),
         '#description' => t('CloudFlare is a free reverse proxy, firewall, and global content delivery network and can be implemented without installing any server software or hardware.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 247,
+          '#chapter' => 9,
+          '#page' => 247,
         ],
         '#module' => 'cloudflare',
         '#seo_training_camp' => Url::fromUri('https://www.cloudflare.com/'),
@@ -682,8 +682,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Move to Fast Hosting'),
         '#description' => t('Faster hosting increases website response times which increase search rankings.'),
         '#book_ref' => [
-          'chapter' => 9,
-          'page' => 247,
+          '#chapter' => 9,
+          '#page' => 247,
         ],
       ],
     ],
@@ -696,16 +696,16 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Make sure website is responsive.'),
         '#description' => t('Google recommends responsive websites for non-desktop devices.'),
         '#book_ref' => [
-          'chapter' => 10,
-          'page' => 252,
+          '#chapter' => 10,
+          '#page' => 252,
         ],
       ],
       'install_and_enable_amp_module_theme_and_php_library_using_composer' => [
         '#title' => t('Install and Enable AMP Module, Theme, and PHP Library using Composer'),
         '#description' => t('The AMP module is designed to convert Drupal pages into pages that comply with the AMP standard.'),
         '#book_ref' => [
-          'chapter' => 10,
-          'page' => 257,
+          '#chapter' => 10,
+          '#page' => 257,
         ],
         '#module' => 'amp',
         '#seo_training_camp' => Url::fromUri('https://www.ampproject.org/'),
@@ -714,8 +714,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure AMP'),
         '#description' => t('Configure the AMP module to show AMP pages when requested.'),
         '#book_ref' => [
-          'chapter' => 10,
-          'page' => 259,
+          '#chapter' => 10,
+          '#page' => 259,
         ],
         '#configure' => 'amp.settings',
       ],
@@ -723,8 +723,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Install and Enable Share Buttons by AddToAny'),
         '#description' => t('Adds SVG sharing icons for Drupal including a universal share button, Facebook, Twitter, Google+, Pinterest, WhatsApp, and many more.'),
         '#book_ref' => [
-          'chapter' => 10,
-          'page' => 266,
+          '#chapter' => 10,
+          '#page' => 266,
         ],
         '#module' => 'addtoany',
         '#seo_training_camp' => Url::fromUri('https://www.addtoany.com/'),
@@ -733,8 +733,8 @@ function seo_checklist_checklistapi_checklist_items() {
         '#title' => t('Configure Share Buttons by AddToAny'),
         '#description' => t('Set up how sharing buttons show up on your site.'),
         '#book_ref' => [
-          'chapter' => 10,
-          'page' => 267,
+          '#chapter' => 10,
+          '#page' => 267,
         ],
         '#configure' => 'addtoany.admin_settings',
       ],
@@ -745,9 +745,9 @@ function seo_checklist_checklistapi_checklist_items() {
       '#title' => t('Learning and giving back'),
       '#description' => t('Learn more about Drupal 8 SEO, give back by saying thanks, or report a bug or suggest a new feature.'),
       'read_drupal_8_seo_by_ben_finklea' => [
-        '#title' => '<strong>' . t('[Optional] Read <a href=":url">Drupal 8 SEO</a> by Ben Finklea', [
+        '#title' => t('<strong>[Optional] Read <a href=":url">Drupal 8 SEO</a> by Ben Finklea</strong>', [
           ':url' => 'https://www.drupal8seo.com/',
-        ]) . '</strong>',
+        ]),
         '#description' => t('This module was built together with the book Drupal 8 SEO. The book contains even more helpful tips along with step-by-step how-tos to get your site optimized for Google.'),
       ],
       'download_free_internet_marketing_resources_from_volacci' => [
@@ -758,7 +758,7 @@ function seo_checklist_checklistapi_checklist_items() {
       ],
       'if_the_seo_checklist_module_helped_you_please_help_get_the_word_out' => [
         '#title' => t('[Optional] If the SEO Checklist module helped you, please help get the word out!'),
-        '#description' => t('Let\'s tell the world that Drupal 8 is excellent for SEO! Please link to <a href=":url">the module page</a>.', [
+        '#description' => t('Let\'s tell the world that Drupal is excellent for SEO! Please link to <a href=":url">the module page</a>.', [
           ':url' => 'https://www.drupal.org/project/seo_checklist',
         ]),
         'tweet' => [
@@ -795,6 +795,11 @@ function seo_checklist_checklistapi_checklist_items() {
  *   - #book_ref: (optional) A reference to where more information may be found
  *     in the Drupal 8 SEO book, with the following key-value pairs:
  *     - #chapter: The chapter number as an integer.
+ *     - #page: The page number as an integer.
+ *   - #seo_guide: (optional) A reference to a page in the Drupal SEO Guide,
+ *     with the following key-value pairs:
+ *     - #title: The page title.
+ *     - #url: The full URL to the page.
  *   - #module: (optional) The project-and-machine name of a module. The item's
  *     checkbox will be pre-checked if the module is installed, and relevant
  *     links will be conditionally added to the item.
@@ -810,7 +815,7 @@ function seo_checklist_checklistapi_checklist_items() {
  *
  * @internal
  */
-function _seo_checklist_preprocess_checklist_items(array $items) {
+function _seo_checklist_preprocess_checklist_items(array $items): array {
   $module_handler = \Drupal::moduleHandler();
   $access_manager = \Drupal::accessManager();
   $current_user = \Drupal::currentUser();
@@ -820,26 +825,58 @@ function _seo_checklist_preprocess_checklist_items(array $items) {
     if (is_array($group)) {
       foreach ($group as &$item) {
         if (is_array($item)) {
-          // Add book reference.
-          if (isset($item['#book_ref'])) {
-            $page = isset($item['#book_ref']['page']) ? $item['#book_ref']['page'] : FALSE;
-            $args = [
-              ':url' => 'https://www.drupal8seo.com/',
-              '@chapter' => $item['#book_ref']['chapter'],
-              '@page' => $page,
-            ];
-            if ($page) {
-              $bookref = '<em class="book-link">' . t('See <a href=":url">Drupal 8 SEO</a> Chapter @chapter, p. @page.', $args) . '</em>';
+
+          // Add "see also" references.
+          $book_ref = isset($item['#book_ref']);
+          $book_chapter = $item['#book_ref']['#chapter'] ?? FALSE;
+          $book_page = $item['#book_ref']['#page'] ?? FALSE;
+          unset($item['#book_ref']);
+          $guide_ref = isset($item['#seo_guide']);
+          $guide_title = ($item['#seo_guide']['#title']) ?? FALSE;
+          $guide_url = ($item['#seo_guide']['#url']) ?? FALSE;
+          unset($item['#seo_guide']);
+
+          $args = [
+            '@book_chapter' => $book_chapter,
+            '@book_page' => $book_page,
+            ':book_url' => 'https://www.drupal8seo.com/',
+            '@guide_title' => $guide_title,
+            ':guide_url' => $guide_url,
+          ];
+
+          $see_also = FALSE;
+          // Book ref and SEO Guide.
+          if ($book_ref && $guide_ref) {
+            // Book ref includes page number.
+            if ($book_page) {
+              $see_also = t('<em>See <a href=":book_url">Drupal 8 SEO</a>, ch. @book_chapter, p. @book_page</em>, or the <em><a href=":guide_url">Drupal SEO Guide: @guide_title</a></em>.', $args);
             }
+            // Book ref includes chapter only.
             else {
-              $bookref = '<em class="book-link">' . t('See <a href=":url">Drupal 8 SEO</a> Chapter @chapter.', $args) . '</em>';
+              $see_also = t('<em>See <a href=":book_url">Drupal 8 SEO</a>, ch. @book_chapter</em>, or the <em><a href=":guide_url">Drupal SEO Guide: @guide_title</a></em>.', $args);
             }
-            $description = isset($item['#description']) ? "{$item['#description']} " : '';
-            $item['#description'] = $description . $bookref;
-            unset($item['#book_ref']);
+          }
+          // Book ref only.
+          elseif ($book_ref) {
+            // Book ref includes page number.
+            if ($book_page) {
+              $see_also = t('<em>See <a href=":book_url">Drupal 8 SEO</a>, ch. @book_chapter, p. @book_page</em>.', $args);
+            } // Book ref includes chapter only.
+            else {
+              $see_also = t('<em>See <a href=":book_url">Drupal 8 SEO</a>, ch. @book_chapter</em>.', $args);
+            }
+          }
+          // SEO Guide only.
+          elseif ($guide_ref) {
+            $see_also = t('<em>See the <a href=":guide_url">Drupal SEO Guide: @guide_title</a></em>.', $args);
           }
 
-          // Made module-related additions.
+          $description = isset($item['#description']) ? "{$item['#description']} " : '';
+          if ($see_also) {
+            $item['#description'] = $description . $see_also;
+          }
+
+          // Make module-related additions.
           if (isset($item['#module'])) {
             $module_name = $item['#module'];
             $module_url_fragment_safe_name = str_replace('_', '-', $module_name);
@@ -918,7 +955,7 @@ function _seo_checklist_preprocess_checklist_items(array $items) {
 function seo_checklist_form_checklistapi_checklist_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   /** @var \Drupal\checklistapi\ChecklistapiChecklist $checklist */
   $checklist = $form['#checklist'];
-  if ($checklist->id == 'seo_checklist') {
+  if ($checklist->id === 'seo_checklist') {
     $form['#attached']['library'][] = 'seo_checklist/seo_checklist';
     // Add a non-link item to the "get the word out" links.
     $get_the_word_out_links = &$form['learning_giving_back']['if_the_seo_checklist_module_helped_you_please_help_get_the_word_out']['#description'];
@@ -929,7 +966,7 @@ function seo_checklist_form_checklistapi_checklist_form_alter(&$form, FormStateI
 /**
  * Implements hook_theme().
  */
-function seo_checklist_theme($existing, $type, $theme, $path) {
+function seo_checklist_theme($existing, $type, $theme, $path): array {
   return [
     'seo_checklist_getting_started' => [
       'variables' => [
