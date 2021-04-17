@@ -56,7 +56,16 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 2,
           '#page' => 19,
         ],
-        '#module' => 'seo_checklist',
+        '#seo_guide' => [
+          '#title' => t('SEO Checklist'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/drupal-seo-checklist-module',
+        ],
+        'configure_permissions' => [
+          '#text' => 'Configure permissions',
+          '#url' => Url::fromRoute('user.admin_permissions', [], [
+            'fragment' => "module-checklist-api",
+          ]),
+        ],
       ],
       'install_and_enable_coffee_module' => [
         '#title' => t('[Optional] Install and Enable Coffee module'),
@@ -65,8 +74,12 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 2,
           '#page' => 27,
         ],
+        '#seo_guide' => [
+          '#title' => t('Coffee Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/coffee-module',
+        ],
         '#module' => 'coffee',
-        '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-coffee/12/04/2016/10291'),
+        '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-week-coffee'),
         '#configure' => 'coffee.configuration',
       ],
       'configure_coffee_module' => [
@@ -75,6 +88,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 2,
           '#page' => 31,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Coffee Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/coffee-module',
         ],
         '#configure' => 'coffee.configuration',
       ],
@@ -85,8 +102,12 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 2,
           '#page' => 35,
         ],
+        '#seo_guide' => [
+          '#title' => t('Admin Toolbar Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/admin-toolbar-module',
+        ],
         '#module' => 'admin_toolbar',
-        '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-admin-toolbar/04/02/2016/9661'),
+        '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-admin-toolbar'),
       ],
       'install_composer_command_line_tool' => [
         '#title' => t('[Optional] Install Composer command line tool'),
@@ -139,6 +160,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 3,
           '#page' => 37,
         ],
+        '#seo_guide' => [
+          '#title' => t('Enable Clean URLs'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/clean-urls',
+        ],
       ],
       'install_and_enable_redirect_module' => [
         '#title' => t('Install and Enable Redirect module'),
@@ -146,6 +171,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 3,
           '#page' => 41,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Redirect Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/redirect-module',
         ],
         '#module' => 'redirect',
       ],
@@ -156,6 +185,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 3,
           '#page' => 43,
         ],
+        '#seo_guide' => [
+          '#title' => t('Redirect Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/redirect-module',
+        ],
         '#configure' => 'redirect.settings',
       ],
       'install_and_enable_pathauto_module' => [
@@ -164,6 +197,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 3,
           '#page' => 48,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Pathauto Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/pathauto-module',
         ],
         '#module' => 'pathauto',
       ],
@@ -174,6 +211,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 3,
           '#page' => 50,
         ],
+        '#seo_guide' => [
+          '#title' => t('Pathauto Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/pathauto-module',
+        ],
         '#configure' => 'pathauto.settings.form',
       ],
       'create_pathauto_patterns' => [
@@ -182,7 +223,29 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 3,
         ],
+        '#seo_guide' => [
+          '#title' => t('Pathauto Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/pathauto-module',
+        ],
         '#configure' => 'entity.pathauto_pattern.collection',
+      ],
+      'install_and_enable_file_field_paths_module' => [
+        '#title' => t('Install and Enable File (Field) Paths module'),
+        '#description' => t('The File (Field) Paths module extends the default functionality of the Drupal core File module.'),
+        '#seo_guide' => [
+          '#title' => t('File (Field) Paths Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/file-field-paths-module',
+        ],
+        '#module' => 'filefield_paths',
+      ],
+      'configure_file_field_paths_module' => [
+        '#title' => t('Configure File (Field) Paths module'),
+        '#description' => t('The File (Field) Paths module extends the default functionality of the Drupal core File module.'),
+        '#seo_guide' => [
+          '#title' => t('File (Field) Paths Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/file-field-paths-module',
+        ],
+        '#configure' => 'entity.node_type.collection',
       ],
     ],
 
@@ -197,8 +260,12 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 4,
           '#page' => 64,
         ],
+        '#seo_guide' => [
+          '#title' => t('Metatag Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/metatag-module',
+        ],
         '#module' => 'metatag',
-        '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week/drupal-8-module-of-the-week-metatag/17/02/2016/9716'),
+        '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week-metatag/17/02/2016/9716'),
       ],
       'set_metatags_for_your_site' => [
         '#title' => t('Set Metatags for your site'),
@@ -206,6 +273,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 4,
           '#page' => 67,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Metatag Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/metatag-module',
         ],
         '#configure' => 'entity.metatag_defaults.collection',
       ],
@@ -215,6 +286,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 4,
           '#page' => 88,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Hreflang Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/hreflang-module',
         ],
         '#module' => 'hreflang',
         '#seo_training_camp' => Url::fromUri('https://support.google.com/webmasters/answer/189077'),
@@ -233,6 +308,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 5,
           '#page' => 96,
         ],
+        '#seo_guide' => [
+          '#title' => t('XML Sitemap Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/xml-sitemap-module',
+        ],
       ],
       'configure_xml_sitemap_module' => [
         '#title' => t('Configure XML Sitemap module'),
@@ -241,7 +320,32 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 5,
           '#page' => 98,
         ],
+        '#seo_guide' => [
+          '#title' => t('XML Sitemap Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/xml-sitemap-module',
+        ],
         '#configure' => 'xmlsitemap.admin_settings',
+      ],
+      'install_and_enable_robotstxt_module' => [
+        '#title' => t('Install and Enable RobotsTxt module'),
+        '#description' => t('Gives you the ability to edit your robots.txt file within the Drupal interface and manage multi-site sitemaps.'),
+        '#seo_guide' => [
+          '#title' => t('RobotsTxt Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/robotstxt-module',
+        ],
+        '#module' => 'robotstxt',
+      ],
+      'add_xml_sitemap_to_your_robotstxt_file' => [
+        '#title' => t('Add XML Sitemap to your robots.txt file'),
+        '#description' => t('Makes your XML sitemap findable by other search engines.'),
+        '#book_ref' => [
+          '#chapter' => 5,
+          '#page' => 119,
+        ],
+        '#seo_guide' => [
+          '#title' => t('RobotsTxt Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/robotstxt-module#addxmlsitemap',
+        ],
       ],
       'set_up_cron' => [
         '#title' => t('Set up Cron'),
@@ -250,45 +354,56 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 5,
           '#page' => 104,
         ],
-      ],
-      'get_a_google_account' => [
-        '#title' => t('Get a Google account.'),
-        '#description' => t('A Google account gives you access to Google Search Console.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 106,
-        ],
-        'create_a_google_account' => [
-          '#text' => t('Create Google account'),
-          '#url' => Url::fromUri('https://accounts.google.com/SignUp'),
+        '#seo_guide' => [
+          '#title' => t('Set up Cron'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/cron',
         ],
       ],
-      'verify_with_google_search_console' => [
-        '#title' => t('Verify with Google Search Console.'),
-        '#description' => t('Verify your ownership of your website with Google.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 107,
+      'google_accounts_sign_ups' => [
+        '#title' => t('Google Accounts Sign Ups'),
+        '#description' => t('Sign up for all the necessary Google accounts that will allow the most accurate analytics tracking for your website.'),
+        '#seo_guide' => [
+          '#title' => t('Google Tracking Submission'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/google-tracking-site-submission#acctsignup',
         ],
-        'google_search_console' => [
-          '#text' => t('Google Search Console'),
-          '#url' => Url::fromUri('https://www.google.com/webmasters/tools/'),
+      ],
+      'install_and_enable_google_tag_manager_module' => [
+        '#title' => t('Install and Enable Google Tag Manager Module'),
+        '#description' => t('Makes setting up your Google Analytics easy and provides the ability to install additional 3rd party scripts and to track visitor activity that is not included with a base Google Analytics installation.'),
+        '#seo_guide' => [
+          '#title' => t('Google Tracking Submission'),
+          '#url' => 'https://www.volacci.com/blog/installing-google-tag-manager-analytics-search-console-drupal-9#install',
         ],
+        '#module' => 'google_tag',
+      ],
+      'configure_google_tag_manager_module' => [
+        '#title' => t('Configure Google Tag Manager Module'),
+        '#description' => t('Use the Google Tag Manager module to install Google Analytics on your website.'),
+        '#seo_guide' => [
+          '#title' => t('Google Tracking Submission'),
+          '#url' => t('https://www.volacci.com/drupal-seo-guide/google-tracking-site-submission#gtmconfig'),
+        ],
+        '#configure' => 'entity.google_tag_container.collection',
       ],
       'submit_xml_sitemap_to_google' => [
-        '#title' => t('Submit XML sitemap to Google.'),
+        '#title' => t('Submit XML sitemap to Google'),
         '#description' => t('Gives Google a list of all the content on your website.'),
         '#book_ref' => [
           '#chapter' => 5,
           '#page' => 111,
         ],
+        '#seo_guide' => [
+          '#title' => t('Submit XML sitemap to Google'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/google-tracking-site-submission#xmlsitemap',
+        ],
+        '#configure' => 'entity.google_tag_container.collection',
         'submit_xml_sitemap' => [
           '#text' => t('Submit XML sitemap'),
           '#url' => Url::fromUri('https://www.google.com/webmasters/tools/sitemap-list'),
         ],
       ],
       'get_a_microsoft_account' => [
-        '#title' => t('Get a Microsoft account.'),
+        '#title' => t('Get a Microsoft account'),
         '#description' => t('A Microsoft account gives you access to Bing Webmaster Tools.'),
         '#book_ref' => [
           '#chapter' => 5,
@@ -300,7 +415,7 @@ function seo_checklist_checklistapi_checklist_items(): array {
         ],
       ],
       'authenticate_with_bing' => [
-        '#title' => t('Authenticate with Bing.'),
+        '#title' => t('Authenticate with Bing'),
         '#description' => t('Authenticate your ownership of your website with Bing.'),
         '#book_ref' => [
           '#chapter' => 5,
@@ -312,7 +427,7 @@ function seo_checklist_checklistapi_checklist_items(): array {
         ],
       ],
       'submit_xml_sitemap_to_bing' => [
-        '#title' => t('Submit XML sitemap to Bing.'),
+        '#title' => t('Submit XML sitemap to Bing'),
         '#description' => t('Gives Bing a list of all the content on your website.'),
         '#book_ref' => [
           '#chapter' => 5,
@@ -322,75 +437,6 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#text' => t('Bing Webmaster Tools'),
           '#url' => Url::fromUri('https://www.bing.com/webmaster/home/'),
         ],
-      ],
-      'add_xml_sitemap_to_your_robotstxt_file' => [
-        '#title' => t('Add XML Sitemap to your robots.txt file.'),
-        '#description' => t('Makes your XML sitemap findable by other search engines.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 119,
-        ],
-      ],
-    ],
-
-    // Analytics.
-    'analytics' => [
-      '#title' => t('Analytics'),
-      '#description' => t('See where your visitors are coming from and what they do while visiting your site.'),
-      'install_and_enable_google_analytics_module' => [
-        '#title' => t('Install and Enable Google Analytics module'),
-        '#description' => t('Adds the Google Analytics code snippet to your website and allows you to control how and when it is used.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 123,
-        ],
-        '#module' => 'google_analytics',
-      ],
-      'configure_google_analytics_module' => [
-        '#title' => t('Configure Google Analytics module'),
-        '#description' => t("Set the tracking property in your site and make sure you're tracking the right roles."),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 125,
-        ],
-        '#configure' => 'google_analytics.admin_settings_form',
-      ],
-      'sign_in_to_google_analytics_and_create_an_analytics_property_for_your_website' => [
-        '#title' => t('Sign in to Google Analytics and create an Analytics property for your website.'),
-        '#description' => t('Create a tracking property for your website.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 126,
-        ],
-      ],
-      'verify_your_site_is_sending_data_to_google_analytics' => [
-        '#title' => t('Verify your site is sending data to Google Analytics.'),
-        '#description' => t('Look for data in Google Analytics from your website.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-        ],
-      ],
-      'cache_the_google_analytics_code' => [
-        '#title' => t('Cache the Google Analytics code'),
-        '#description' => t('If data is showing in Google Analytics, set caching to increase performance.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-          '#page' => 130,
-        ],
-        '#configure' => 'google_analytics.admin_settings_form',
-      ],
-      'alt_install_and_enable_piwik_web_analytics' => [
-        '#title' => t('ALT: Install and Enable Piwik Web Analytics'),
-        '#description' => t('As an alternative to Google Analytics, consider the Piwik module.'),
-        '#book_ref' => [
-          '#chapter' => 5,
-        ],
-        '#module' => 'piwik',
-        '#seo_training_camp' => Url::fromUri('https://piwik.org/'),
-      ],
-      'alt_configure_piwik_web_analytics' => [
-        '#title' => t('ALT: Configure Piwik Web Analytics'),
-        '#configure' => 'piwik.admin_settings_form',
       ],
     ],
 
@@ -405,6 +451,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 6,
           '#page' => 136,
         ],
+        '#seo_guide' => [
+          '#title' => t('Easy Breadcrumb Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/easy-breadcrumb-module',
+        ],
         '#module' => 'easy_breadcrumb',
       ],
       'configure_easy_breadcrumbs_module' => [
@@ -414,58 +464,22 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 6,
           '#page' => 137,
         ],
+        '#seo_guide' => [
+          '#title' => t('Easy Breadcrumb Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/easy-breadcrumb-module',
+        ],
         '#configure' => 'easy_breadcrumb.general_settings_form',
       ],
-      'install_and_enable_rdf_ui_module' => [
-        '#title' => t('Install and Enable RDF UI module (use the dev version until beta2 is released)'),
-        '#description' => t('Allows site builders to integrate schema.org seamlessly during or after the site building process on Drupal 8.'),
-        '#book_ref' => [
-          '#chapter' => 6,
-          '#page' => 143,
-        ],
-        '#module' => 'rdfui',
-      ],
-      'set_schemaorg_schemas_for_your_content' => [
-        '#title' => t('Set Schema.org schemas for your content'),
-        '#description' => t('Select the schemas that best match your content.'),
-        '#book_ref' => [
-          '#chapter' => 6,
-          '#page' => 144,
-        ],
-        '#configure' => 'entity.node_type.collection',
-      ],
-      'install_and_enable_linkit_module' => [
-        '#title' => t('Install and Enable Linkit module'),
-        '#description' => t('Provides an easy interface for internal and external linking with wysiwyg editors by using an autocomplete field.'),
-        '#book_ref' => [
-          '#chapter' => 6,
-          '#page' => 149,
-        ],
-        '#module' => 'linkit',
-        '#configure' => 'entity.linkit_profile',
-      ],
-      'configure_linkit_module' => [
-        '#title' => t('Configure Linkit module'),
-        '#description' => t('Set up CKEditor to use the Linkit module'),
-        '#book_ref' => [
-          '#chapter' => 6,
-          '#page' => 150,
-        ],
-      ],
-      'configure_text_formats_to_use_linkit_module' => [
-        '#title' => t('Configure Text formats to use Linkit module'),
-        '#configure' => 'filter.admin_overview',
-        '#book_ref' => [
-          '#chapter' => 6,
-          '#page' => 153,
-        ],
-      ],
       'install_and_enable_d8_editor_advanced_link_module' => [
-        '#title' => t('Install and Enable D8 Editor Advanced link module'),
+        '#title' => t('Install and Enable Editor Advanced link module'),
         '#description' => t('Allows you to define title, class, id, target, and rel for links in CKEditor.'),
         '#book_ref' => [
           '#chapter' => 6,
           '#page' => 161,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Editor Advanced Link Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/editor-advanced-link-module',
         ],
         '#module' => 'editor_advanced_link',
       ],
@@ -476,25 +490,11 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 6,
           '#page' => 162,
         ],
+        '#seo_guide' => [
+          '#title' => t('Editor Advanced Link Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/editor-advanced-link-module',
+        ],
         '#configure' => 'filter.admin_overview',
-      ],
-      'install_and_enable_w3c_validator_module' => [
-        '#title' => t('Install and Enable W3C Validator module'),
-        '#description' => t('W3C Validator provides a Drupal interface to use the W3C Markup Validator.'),
-        '#book_ref' => [
-          '#chapter' => 7,
-          '#page' => 171,
-        ],
-        '#module' => 'w3c_validator',
-      ],
-      'configure_w3c_validator_module' => [
-        '#title' => t('Configure W3C Validator module'),
-        '#description' => t('Set up W3C Validator and check your pages.'),
-        '#book_ref' => [
-          '#chapter' => 7,
-          '#page' => 172,
-        ],
-        '#configure' => 'w3c_validator.overview',
       ],
       'install_and_enable_sitemap_module' => [
         '#title' => t('Install and Enable Sitemap module'),
@@ -503,6 +503,11 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 7,
           '#page' => 175,
         ],
+        '#seo_guide' => [
+          '#title' => t('Sitemap Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/sitemap-module',
+        ],
+        '#module' => 'sitemap',
       ],
       'configure_sitemap_module' => [
         '#title' => t('Configure Sitemap module'),
@@ -510,6 +515,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 7,
           '#page' => 177,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Sitemap Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/sitemap-module',
         ],
         '#module' => 'sitemap',
         '#configure' => 'sitemap.settings',
@@ -521,6 +530,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 7,
           '#page' => 181,
         ],
+        '#seo_guide' => [
+          '#title' => t('Search 404 Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/search-404-module',
+        ],
         '#module' => 'search404',
       ],
       'configure_search_404_module' => [
@@ -530,31 +543,43 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 7,
           '#page' => 182,
         ],
+        '#seo_guide' => [
+          '#title' => t('Search 404 Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/search-404-module',
+        ],
         '#configure' => 'search404.settings',
       ],
     ],
 
     // Page optimization.
     'page_optimization' => [
-      '#title' => t('Page optimization'),
+      '#title' => t('On-page optimization'),
       '#description' => t('Optimize each page of your website for optimal results.'),
       'install_and_enable_yoast_seo_module' => [
-        '#title' => t('Install and Enable Yoast SEO module'),
+        '#title' => t('Install and Enable Real-time SEO for Drupal module'),
         '#description' => t('Helps you optimize content around keywords in a natural, non-spam way.'),
         '#book_ref' => [
           '#chapter' => 8,
           '#page' => 189,
         ],
+        '#seo_guide' => [
+          '#title' => t('Real-time SEO for Drupal Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/real-time-seo-drupal-module',
+        ],
         '#module' => 'yoast_seo',
-        '#configure' => 'yoast_seo.settings',
       ],
       'configure_yoast_seo_module' => [
-        '#title' => t('Configure Yoast SEO Module'),
-        '#description' => t('Set up which content types the Yoast module will evaluate.'),
+        '#title' => t('Configure Real-time SEO for Drupal Module'),
+        '#description' => t('Set up which content types the Real-time SEO for Drupal module will evaluate.'),
         '#book_ref' => [
           '#chapter' => 8,
           '#page' => 190,
         ],
+        '#seo_guide' => [
+          '#title' => t('Real-time SEO for Drupal Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/real-time-seo-drupal-module',
+        ],
+        '#configure' => 'yoast_seo.settings',
       ],
       'turn_on_create_new_revisions_for_all_content' => [
         '#title' => t('Turn on Create New Revisions for all content types'),
@@ -562,6 +587,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 8,
           '#page' => 196,
+        ],
+        '#seo_guide' => [
+          '#title' => t('The Diff Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/diff-module',
         ],
         '#configure' => 'filter.admin_overview',
       ],
@@ -572,6 +601,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 8,
           '#page' => 198,
         ],
+        '#seo_guide' => [
+          '#title' => t('The Diff Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/diff-module',
+        ],
         '#module' => 'diff',
       ],
       'configure_the_diff_module' => [
@@ -581,6 +614,11 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 8,
           '#page' => 198,
         ],
+        '#seo_guide' => [
+          '#title' => t('The Diff Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/diff-module',
+        ],
+        '#module' => 'diff',
         '#configure' => 'diff.general_settings',
       ],
       'install_and_enable_scheduler_module' => [
@@ -590,6 +628,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 8,
           '#page' => 204,
         ],
+        '#seo_guide' => [
+          '#title' => t('Scheduler Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/scheduler-module',
+        ],
         '#module' => 'scheduler',
       ],
       'configure_the_scheduler_module' => [
@@ -598,6 +640,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 8,
           '#page' => 207,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Scheduler Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/scheduler-module',
         ],
         '#configure' => 'scheduler.admin_form',
       ],
@@ -614,6 +660,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 9,
           '#page' => 215,
         ],
+        '#seo_guide' => [
+          '#title' => t('Security Review Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/security-review-module',
+        ],
         '#module' => 'security_review',
       ],
       'configure_security_review_module' => [
@@ -623,23 +673,50 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 9,
           '#page' => 217,
         ],
-      ],
-      'secure_your_website_with_https' => [
-        '#title' => t('Secure Your Website with HTTPS'),
-        '#description' => t('Google rewards secure websites with higher rankings.'),
-        '#book_ref' => [
-          '#chapter' => 9,
-          '#page' => 227,
+        '#seo_guide' => [
+          '#title' => t('Security Review Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/security-review-module',
         ],
+        '#configure' => 'security_review',
       ],
-      'adjust_performance_admin_settings' => [
-        '#title' => t('Adjust Performance Admin Settings'),
-        '#description' => t('Increase performance of your website with proper caching.'),
+      'install_and_enable_honeypot_module' => [
+        '#title' => t('Install and Enable Honeypot module'),
+        '#description' => t('The Honeypot module provides an effective way to help eliminate spambot form submissions.'),
         '#book_ref' => [
-          '#chapter' => 9,
-          '#page' => 230,
+          '#chapter' => 123,
+          '#page' => 123,
         ],
-        '#configure' => 'system.performance_settings',
+        '#seo_guide' => [
+          '#title' => t('Honeypot Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/honeypot-module',
+        ],
+        '#module' => 'honeypot',
+        '#seo_training_camp' => Url::fromUri('https://www.drupal.org/docs/contributed-modules/honeypot'),
+      ],
+      'configure_honeypot_module' => [
+        '#title' => t('Configure Honeypot module'),
+        '#description' => t('Select the configuration options for the forms on your website.'),
+        '#book_ref' => [
+          '#chapter' => 123,
+          '#page' => 123,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Honeypot Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/honeypot-module',
+        ],
+        '#configure' => 'honeypot.config',
+      ],
+      'run_a_speed_test_for_your_site' => [
+        '#title' => t('Run a Speed Test for Your Site'),
+        '#description' => t("Before moving on, make sure to test your website's speed. These tools can provide benchmarks before moving forward to help you determine if more aggressive caching will improve your site's speed."),
+        'googles_page_speed_insights_tool' => [
+          '#text' => t("Google PageSpeed Insights"),
+          '#url' => Url::fromUri('https://developers.google.com/speed/pagespeed/insights/'),
+        ],
+        'web_page_testorg' => [
+          '#text' => t('WebPageTest.org'),
+          '#url' => Url::fromUri('http://www.webpagetest.org/'),
+        ],
       ],
       'install_and_enable_advanced_css_js_aggregation_module' => [
         '#title' => t('Install and Enable Advanced CSS/JS Aggregation module'),
@@ -647,6 +724,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 9,
           '#page' => 233,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Advanced CSS/JS Aggregation Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/advanced-cssjs-aggregation-module',
         ],
         '#module' => 'advagg',
       ],
@@ -657,7 +738,36 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 9,
           '#page' => 235,
         ],
+        '#seo_guide' => [
+          '#title' => t('Advanced CSS/JS Aggregation Module'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/advanced-cssjs-aggregation-module',
+        ],
         '#configure' => 'advagg.settings',
+      ],
+      'secure_your_website_with_https' => [
+        '#title' => t('Secure Your Website with HTTPS'),
+        '#description' => t('Google rewards secure websites with higher rankings.'),
+        '#book_ref' => [
+          '#chapter' => 9,
+          '#page' => 227,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Secure Your Website With HTTPS'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/https-securing-your-site',
+        ],
+      ],
+      'adjust_performance_admin_settings' => [
+        '#title' => t('Adjust Performance Admin Settings'),
+        '#description' => t('Increase performance of your website with proper caching.'),
+        '#book_ref' => [
+          '#chapter' => 9,
+          '#page' => 230,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Adjust Performance Admin Settings'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/adjust-performance-admin-settings',
+        ],
+        '#configure' => 'system.performance_settings',
       ],
       'configure_image_styles' => [
         '#title' => t('Configure Image Styles'),
@@ -665,6 +775,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 9,
           '#page' => 239,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Image Styles'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/image-styles',
         ],
         '#configure' => 'entity.image_style.collection',
       ],
@@ -675,6 +789,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 9,
           '#page' => 247,
         ],
+        '#seo_guide' => [
+          '#title' => t('Third Party Speed Options'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/cdn-content-delivery-network',
+        ],
         '#module' => 'cloudflare',
         '#seo_training_camp' => Url::fromUri('https://www.cloudflare.com/'),
       ],
@@ -684,6 +802,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 9,
           '#page' => 247,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Move to Faster Hosting'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/third-party-speed-options',
         ],
       ],
     ],
@@ -699,6 +821,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 10,
           '#page' => 252,
         ],
+        '#seo_guide' => [
+          '#title' => t('Check Site for Responsive Web Design'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/check-site-responseive-web-design',
+        ],
       ],
       'install_and_enable_amp_module_theme_and_php_library_using_composer' => [
         '#title' => t('Install and Enable AMP Module, Theme, and PHP Library using Composer'),
@@ -706,6 +832,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 10,
           '#page' => 257,
+        ],
+        '#seo_guide' => [
+          '#title' => t('AMP Accelerated Mobile Pages'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/amp-module-theme-php-library-suite',
         ],
         '#module' => 'amp',
         '#seo_training_camp' => Url::fromUri('https://www.ampproject.org/'),
@@ -717,6 +847,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 10,
           '#page' => 259,
         ],
+        '#seo_guide' => [
+          '#title' => t('AMP Accelerated Mobile Pages'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/amp-module-theme-php-library-suite',
+        ],
         '#configure' => 'amp.settings',
       ],
       'install_and_enable_share_buttons_by_addtoany' => [
@@ -725,6 +859,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#book_ref' => [
           '#chapter' => 10,
           '#page' => 266,
+        ],
+        '#seo_guide' => [
+          '#title' => t('Add To Any'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/add-to-any-module',
         ],
         '#module' => 'addtoany',
         '#seo_training_camp' => Url::fromUri('https://www.addtoany.com/'),
@@ -736,6 +874,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#chapter' => 10,
           '#page' => 267,
         ],
+        '#seo_guide' => [
+          '#title' => t('Add To Any'),
+          '#url' => 'https://www.volacci.com/drupal-seo-guide/add-to-any-module',
+        ],
         '#configure' => 'addtoany.admin_settings',
       ],
     ],
@@ -745,16 +887,22 @@ function seo_checklist_checklistapi_checklist_items(): array {
       '#title' => t('Learning and giving back'),
       '#description' => t('Learn more about Drupal 8 SEO, give back by saying thanks, or report a bug or suggest a new feature.'),
       'read_drupal_8_seo_by_ben_finklea' => [
-        '#title' => t('<strong>[Optional] Read <a href=":url">Drupal 8 SEO</a> by Ben Finklea</strong>', [
+        '#title' => t('[Optional] Read <a href=":url">Drupal 8 SEO</a> by Ben Finklea', [
           ':url' => 'https://www.drupal8seo.com/',
         ]),
         '#description' => t('This module was built together with the book Drupal 8 SEO. The book contains even more helpful tips along with step-by-step how-tos to get your site optimized for Google.'),
       ],
-      'download_free_internet_marketing_resources_from_volacci' => [
-        '#title' => t('[Optional] Download <a href=":url">free Internet marketing resources</a> from Volacci.', [
-          ':url' => 'https://www.volacci.com/resources/whitepapers?' . SEO_CHECKLIST_GA_QUERY_STRING,
+      'use_and_link_to_our_online_drupal_seo_guide' => [
+        '#title' => t('[Optional] Use and link to our online <a href=":url">Drupal SEO Guide</a>', [
+          ':url' => 'https://www.volacci.com/drupal-seo-guide',
         ]),
-        '#description' => t('Free resources from the Drupal SEO agency.'),
+        '#description' => t('We have updated the content from the Drupal 8 SEO book and published it on our website. Like the book, it contains even more helpful tips along with step-by-step how-tos to get your site optimized for Google.'),
+      ],
+      'sign_up_for_a_drupal_org_account_if_you_dont_already_have_one' => [
+        '#title' => t('[Optional] Sign up for a <a href=":url">Drupal.org account</a> if you don\'t already have one', [
+          ':url' => 'https://register.drupal.org/user/register',
+        ]),
+        '#description' => t('Get involved in the Drupal community and help us make Drupal an even better Content Management System.'),
       ],
       'if_the_seo_checklist_module_helped_you_please_help_get_the_word_out' => [
         '#title' => t('[Optional] If the SEO Checklist module helped you, please help get the word out!'),
@@ -914,7 +1062,7 @@ function _seo_checklist_preprocess_checklist_items(array $items): array {
                 $item['permissions_page'] = [
                   '#text' => t('Configure permissions'),
                   '#url' => Url::fromRoute('user.admin_permissions', [], [
-                    'fragment' => "module-{$module_url_fragment_safe_name}",
+                    'fragment' => "module-{$module_name}",
                   ]),
                 ];
               }
@@ -963,7 +1111,12 @@ function seo_checklist_form_checklistapi_checklist_form_alter(&$form, FormStateI
   /** @var \Drupal\checklistapi\ChecklistapiChecklist $checklist */
   $checklist = $form['#checklist'];
   if ($checklist->id === 'seo_checklist') {
+    // Attach custom JavaScript.
     $form['#attached']['library'][] = 'seo_checklist/seo_checklist';
+
+    // Check "Install and Enable SEO Checklist module" by default.
+    $form['be_efficient']['install_and_enable_seo_checklist_module']['#default_value'] = TRUE;
+
     // Add a non-link item to the "get the word out" links.
     $get_the_word_out_links = &$form['learning_giving_back']['if_the_seo_checklist_module_helped_you_please_help_get_the_word_out']['#description'];
     $get_the_word_out_links = str_replace('</div>', ' | ' . t('Blog about it') . '</div>', $get_the_word_out_links);
