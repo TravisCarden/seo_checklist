@@ -817,10 +817,12 @@ function seo_checklist_checklistapi_checklist_items(): array {
  */
 function _seo_checklist_preprocess_checklist_items(array $items): array {
   $module_handler = \Drupal::moduleHandler();
+  $module_directories = $module_handler->getModuleDirectories();
   $access_manager = \Drupal::accessManager();
   $current_user = \Drupal::currentUser();
   /** @var \Drupal\Core\Routing\RouteProviderInterface $route_provider */
   $route_provider = \Drupal::service('router.route_provider');
+
   foreach ($items as &$group) {
     if (is_array($group)) {
       foreach ($group as &$item) {
@@ -905,12 +907,17 @@ function _seo_checklist_preprocess_checklist_items(array $items): array {
               ];
             }
             if ($enabled && $access_manager->checkNamedRoute('user.admin_permissions', [], $current_user)) {
-              $item['permissions_page'] = [
-                '#text' => t('Configure permissions'),
-                '#url' => Url::fromRoute('user.admin_permissions', [], [
-                  'fragment' => "module-{$module_url_fragment_safe_name}",
-                ]),
-              ];
+              // The permissions handler blows up in this context, so see if the
+              // module has a permission.yml file as a cheap alternative.
+              $has_permissions = file_exists("{$module_directories[$module_name]}/{$module_name}.permissions.yml");
+              if ($has_permissions) {
+                $item['permissions_page'] = [
+                  '#text' => t('Configure permissions'),
+                  '#url' => Url::fromRoute('user.admin_permissions', [], [
+                    'fragment' => "module-{$module_url_fragment_safe_name}",
+                  ]),
+                ];
+              }
             }
 
             unset($item['#module']);
