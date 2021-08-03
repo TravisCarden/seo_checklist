@@ -267,6 +267,16 @@ function seo_checklist_checklistapi_checklist_items(): array {
         '#module' => 'metatag',
         '#seo_training_camp' => Url::fromUri('https://dev.acquia.com/blog/drupal-8-module-of-the-week-metatag/17/02/2016/9716'),
       ],
+      'install_and_enable_schema_metatag' => [
+        '#title' => t('Install and Enable Schema Metatag module'),
+        '#description' => t('Extends the Metatag module to display structured data as JSON LD in the head of web pages. Install the appropriate sub-modules to add corresponding functionality for configuration in the next step.'),
+        '#module' => 'schema_metatag',
+        'test' => [
+          '#text' => t('Lullabot Blog Post'),
+          '#url' => Url::fromUri('https://www.lullabot.com/articles/create-seo-juice-by-adding-json-ld-structured-data-to-drupal-8'),
+          '#weight' => 5,
+        ],
+      ],
       'set_metatags_for_your_site' => [
         '#title' => t('Set Metatags for your site'),
         '#description' => t('Set up the metatags for your content.'),
