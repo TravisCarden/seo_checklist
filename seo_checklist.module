@@ -120,18 +120,6 @@ function seo_checklist_checklistapi_checklist_items(): array {
           '#url' => Url::fromUri('https://getcomposer.org/'),
         ],
       ],
-      'install_console_command_line_tool' => [
-        '#title' => t('[Optional] Install Drupal Console command line tool'),
-        '#description' => t('Drupal Console is a newer command line tool that also helps you to install modules faster.'),
-        '#book_ref' => [
-          '#chapter' => 1,
-        ],
-        '#seo_training_camp' => Url::fromUri('https://drupalconsole.com/docs'),
-        'project_page' => [
-          '#text' => t('Download'),
-          '#url' => Url::fromUri('https://drupalconsole.com/'),
-        ],
-      ],
       'install_drush_command_line_tool' => [
         '#title' => t('[Optional] Install Drush command line tool'),
         '#description' => t('Drush is a command line tool for Drupal that you can use, among other things, to install modules faster.'),
@@ -145,7 +133,7 @@ function seo_checklist_checklistapi_checklist_items(): array {
         ],
       ],
       'show_cli_commands' => [
-        '#title' => t('[Optional] Check here to show suggested Composer, Drupal Console, and Drush commands in SEO Checklist item descriptions.'),
+        '#title' => t('[Optional] Check here to show suggested Composer and Drush commands in SEO Checklist item descriptions.'),
       ],
     ],
 
@@ -1051,7 +1039,6 @@ function _seo_checklist_preprocess_checklist_items(array $items): array {
             // Add CLI commands to description.
             $item['#description'] .= '</p><p class="cli-commands">'
               . "Composer: <code>composer require drupal/{$module_name}</code><br />"
-              . "Drupal Console: <code>drupal module:install {$module_name} --latest</code><br />"
               . "Drush: <code>drush dl {$module_name} && drush en {$module_name}</code>";
 
             // Add module links.
