@@ -300,7 +300,10 @@ function seo_checklist_checklistapi_checklist_items(): array {
       '#description' => t('Set your site up with the search engines and submit your XML sitemap.'),
       'install_and_enable_xml_sitemap_module' => [
         '#title' => t('Install and Enable XML Sitemap module'),
-        '#description' => t('Creates an XML Sitemap of your content that you can submit to the search engines.'),
+        '#description' => t(
+          'Creates an XML Sitemap of your content that you can submit to the search engines. (For an alternative to the XML Sitemap module, consider <a href=":url">Simple XML sitemap</a>.)',
+          [':url' => 'https://www.drupal.org/project/simple_sitemap']
+        ),
         '#module' => 'xmlsitemap',
         '#book_ref' => [
           '#chapter' => 5,
